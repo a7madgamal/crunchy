@@ -4,17 +4,29 @@ import { DataItem } from "../hooks/useFilter";
 interface FileActionsProps {
   setData: React.Dispatch<React.SetStateAction<DataItem[]>>;
   filteredData: DataItem[];
+  setLocationFilter: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 export const FileActions: React.FC<FileActionsProps> = ({
   setData,
   filteredData,
+  setLocationFilter,
 }) => {
   const handleLoadFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       const text = await file.text();
       const jsonData = JSON.parse(text);
+
+      const uniqueLocations = new Set<string>();
+
+      jsonData.forEach((item: DataItem) => {
+        item.locationIdentifiers.forEach((location: string) => {
+          uniqueLocations.add(location);
+        });
+      });
+
+      setLocationFilter(Array.from(uniqueLocations).sort());
       setData(jsonData);
     }
   };

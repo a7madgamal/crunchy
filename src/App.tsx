@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "@mui/material";
 
 import { FilterInput } from "./components/FilterInput";
@@ -10,6 +10,7 @@ export const App: React.FC = () => {
   const { sortedData, updateFilters, setFilteredData, handleSort, activeSort } =
     useFilter();
   const [selectedRows, setSelectedRows] = React.useState<number[]>([]);
+  const [locationFilter, setLocationFilter] = useState<string[]>([]);
 
   const handleSelectRow = (rowIndex: number) => {
     setSelectedRows((prev) => {
@@ -37,8 +38,15 @@ export const App: React.FC = () => {
   return (
     <Container maxWidth="xl">
       <h1>JSON File Table with Filters</h1>
-      <FileActions setData={setFilteredData} filteredData={sortedData} />
-      <FilterInput updateFilters={updateFilters} />
+      <FileActions
+        setData={setFilteredData}
+        filteredData={sortedData}
+        setLocationFilter={setLocationFilter}
+      />
+      <FilterInput
+        updateFilters={updateFilters}
+        locationFilter={locationFilter}
+      />
       <JsonTable
         tableData={sortedData}
         selectedRows={selectedRows}

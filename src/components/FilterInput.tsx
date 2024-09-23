@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import {
   CATEGORY_GROUPS_FILTER,
-  LOCATION_FILTER,
   NUM_EMPLOYEES,
   REV_OPTIONS,
 } from "../filters/filterOptions";
@@ -26,9 +25,13 @@ interface FilterInputProps {
     rankOrgCompanyFilter: number | null,
     revenueRangeFilter: string[]
   ) => void;
+  locationFilter: string[];
 }
 
-export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
+export const FilterInput: FC<FilterInputProps> = ({
+  updateFilters,
+  locationFilter,
+}) => {
   const { control, watch } = useForm<{
     name: string;
     numEmployees: string[];
@@ -55,7 +58,6 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
   const watchRevenueRange = watch("revenueRange");
 
   useEffect(() => {
-    console.log("filter input useeffect");
     const rankValue = watchRankOrgCompany ? Number(watchRankOrgCompany) : null;
 
     updateFilters(
@@ -82,21 +84,16 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
         name="name"
         control={control}
         render={({ field }) => (
-          <TextField
-            {...field}
-            label="Filter by Name"
-            variant="outlined"
-            fullWidth
-          />
+          <TextField {...field} label="Name" variant="outlined" />
         )}
       />
 
-      <Controller
-        name="numEmployees"
-        control={control}
-        render={({ field }) => (
-          <FormControl fullWidth>
-            <InputLabel>Num of Employees</InputLabel>
+      <FormControl style={{ minWidth: 200 }}>
+        <InputLabel>Num</InputLabel>
+        <Controller
+          name="numEmployees"
+          control={control}
+          render={({ field }) => (
             <Select
               {...field}
               multiple
@@ -109,16 +106,16 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
-        )}
-      />
+          )}
+        />
+      </FormControl>
 
-      <Controller
-        name="categoryGroups"
-        control={control}
-        render={({ field }) => (
-          <FormControl fullWidth>
-            <InputLabel>Category Groups</InputLabel>
+      <FormControl style={{ minWidth: 200 }}>
+        <InputLabel>Category Groups</InputLabel>
+        <Controller
+          name="categoryGroups"
+          control={control}
+          render={({ field }) => (
             <Select
               {...field}
               multiple
@@ -131,31 +128,31 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
-        )}
-      />
+          )}
+        />
+      </FormControl>
 
-      <Controller
-        name="locationIdentifiers"
-        control={control}
-        render={({ field }) => (
-          <FormControl fullWidth>
-            <InputLabel>Filter by Locations</InputLabel>
+      <FormControl style={{ minWidth: 200 }}>
+        <InputLabel>Location</InputLabel>
+        <Controller
+          name="locationIdentifiers"
+          control={control}
+          render={({ field }) => (
             <Select
               {...field}
               multiple
               renderValue={(selected) => (selected as string[]).join(", ")}
             >
-              {LOCATION_FILTER.map((option) => (
-                <MenuItem key={option} value={option}>
-                  <Checkbox checked={field.value.includes(option)} />
-                  <ListItemText primary={option} />
+              {locationFilter.map((location) => (
+                <MenuItem key={location} value={location}>
+                  <Checkbox checked={field.value.indexOf(location) > -1} />
+                  <ListItemText primary={location} />
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
-        )}
-      />
+          )}
+        />
+      </FormControl>
 
       <Controller
         name="rankOrgCompany"
@@ -163,20 +160,19 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
         render={({ field }) => (
           <TextField
             {...field}
-            label="Crunchbase rank (≤)"
+            label="Max Rank"
             type="number"
             variant="outlined"
-            fullWidth
           />
         )}
       />
 
-      <Controller
-        name="revenueRange"
-        control={control}
-        render={({ field }) => (
-          <FormControl fullWidth>
-            <InputLabel>Filter by Revenue</InputLabel>
+      <FormControl style={{ minWidth: 200 }}>
+        <InputLabel>Revenue Range</InputLabel>
+        <Controller
+          name="revenueRange"
+          control={control}
+          render={({ field }) => (
             <Select
               {...field}
               multiple
@@ -184,14 +180,14 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
             >
               {REV_OPTIONS.map((option) => (
                 <MenuItem key={option} value={option}>
-                  <Checkbox checked={field.value.includes(option)} />
+                  <Checkbox checked={field.value.indexOf(option) > -1} />
                   <ListItemText primary={option} />
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
-        )}
-      />
+          )}
+        />
+      </FormControl>
     </div>
   );
 };
