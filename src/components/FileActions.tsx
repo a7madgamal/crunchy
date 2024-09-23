@@ -1,8 +1,9 @@
 import React from "react";
+import { DataItem } from "../hooks/useFilter";
 
 interface FileActionsProps {
-  setData: React.Dispatch<React.SetStateAction<any[]>>;
-  filteredData: any[];
+  setData: React.Dispatch<React.SetStateAction<DataItem[]>>;
+  filteredData: DataItem[];
 }
 
 const FileActions: React.FC<FileActionsProps> = ({ setData, filteredData }) => {

@@ -1,24 +1,13 @@
-// src/App.tsx
-import React, { useState } from "react";
+import React from "react";
 import FilterInput from "./components/FilterInput";
 import JsonTable from "./components/JsonTable";
 import FileActions from "./components/FileActions";
 import { Container } from "@mui/material";
 import useFilter from "./hooks/useFilter";
 
-export interface DataItem {
-  name: string;
-  numEmployeesEnum: string;
-  categories: string[];
-  locationIdentifiers: string[];
-  rankOrgCompany: number;
-  revenueRange: string[];
-}
-
 const App: React.FC = () => {
-  const [data, setData] = useState<DataItem[]>([]);
-  const { filteredData, updateFilters } = useFilter(data);
-  const [selectedRows, setSelectedRows] = useState<number[]>([]);
+  const { filteredData, updateFilters, setFilteredData } = useFilter();
+  const [selectedRows, setSelectedRows] = React.useState<number[]>([]);
 
   const handleSelectRow = (rowIndex: number) => {
     setSelectedRows((prev) => {
@@ -37,14 +26,16 @@ const App: React.FC = () => {
   };
 
   const handleDeleteSelected = () => {
-    setData((prev) => prev.filter((_, index) => !selectedRows.includes(index)));
+    setFilteredData((prev) =>
+      prev.filter((_, index) => !selectedRows.includes(index))
+    );
     setSelectedRows([]);
   };
 
   return (
     <Container>
       <h1>JSON File Table with Filters</h1>
-      <FileActions setData={setData} filteredData={filteredData} />
+      <FileActions setData={setFilteredData} filteredData={filteredData} />
       <FilterInput updateFilters={updateFilters} />
       <JsonTable
         tableData={filteredData}

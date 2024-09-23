@@ -10,7 +10,7 @@ import {
   Checkbox,
   TableFooter,
 } from "@mui/material";
-import { DataItem } from "../App";
+import { DataItem } from "../hooks/useFilter";
 
 interface JsonTableProps {
   tableData: DataItem[];

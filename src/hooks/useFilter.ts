@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { DataItem } from "../App";
 
-const useFilter = (data: DataItem[]) => {
-  console.log("usefilter");
-  const [filteredData, setFilteredData] = useState<DataItem[]>(data);
+export interface DataItem {
+  name: string;
+  numEmployeesEnum: string;
+  categories: string[];
+  locationIdentifiers: string[];
+  rankOrgCompany: number;
+  revenueRange: string[];
+}
+
+const useFilter = () => {
+  const [filteredData, setFilteredData] = useState<DataItem[]>([]);
 
   const updateFilters = (
     nameFilter: string,
@@ -13,7 +20,7 @@ const useFilter = (data: DataItem[]) => {
     rankOrgCompanyFilter: number | null,
     revenueRangeFilter: string[]
   ) => {
-    const filtered = data.filter((item) => {
+    const filtered = filteredData.filter((item) => {
       const nameMatches =
         item.name === "" ||
         item.name.toLowerCase().includes(nameFilter.toLowerCase());
@@ -51,7 +58,7 @@ const useFilter = (data: DataItem[]) => {
     setFilteredData(filtered);
   };
 
-  return { filteredData, updateFilters };
+  return { filteredData, updateFilters, setFilteredData };
 };
 
 export default useFilter;
