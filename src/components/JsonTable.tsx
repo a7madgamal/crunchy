@@ -26,7 +26,7 @@ interface JsonTableProps {
   };
 }
 
-export const JsonTable: React.FC<JsonTableProps> = ({
+const JsonTable: React.FC<JsonTableProps> = ({
   tableData,
   selectedRows,
   onSelectRow,
@@ -47,6 +47,7 @@ export const JsonTable: React.FC<JsonTableProps> = ({
               />
             </TableCell>
             <TableCell>Name</TableCell>
+            <TableCell>Website</TableCell>
             <TableCell>Num Employees</TableCell>
             <TableCell>Categories</TableCell>
             <TableCell>Locations</TableCell>
@@ -79,6 +80,15 @@ export const JsonTable: React.FC<JsonTableProps> = ({
                   {item.name}
                 </Link>
               </TableCell>
+              <TableCell>
+                <Link
+                  href={item.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.website}
+                </Link>
+              </TableCell>
               <TableCell>{item.numEmployeesEnum}</TableCell>
               <TableCell>{item.categories.join(", ")}</TableCell>
               <TableCell>{item.locationIdentifiers.join(", ")}</TableCell>
@@ -89,7 +99,7 @@ export const JsonTable: React.FC<JsonTableProps> = ({
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={7}>
+            <TableCell colSpan={8}>
               <button onClick={onDeleteSelected}>Delete Selected</button>
             </TableCell>
           </TableRow>
@@ -98,3 +108,5 @@ export const JsonTable: React.FC<JsonTableProps> = ({
     </TableContainer>
   );
 };
+
+export { JsonTable };
