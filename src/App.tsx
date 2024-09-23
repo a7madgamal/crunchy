@@ -35,7 +35,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <Container>
+    <Container maxWidth="xl">
       <h1>JSON File Table with Filters</h1>
       <FileActions setData={setFilteredData} filteredData={sortedData} />
       <FilterInput updateFilters={updateFilters} />

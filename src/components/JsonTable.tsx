@@ -48,6 +48,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
             </TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Website</TableCell>
+            <TableCell>LinkedIn</TableCell>
             <TableCell>Num Employees</TableCell>
             <TableCell>Categories</TableCell>
             <TableCell>Locations</TableCell>
@@ -89,6 +90,15 @@ const JsonTable: React.FC<JsonTableProps> = ({
                   {item.website}
                 </Link>
               </TableCell>
+              <TableCell>
+                <Link
+                  href={item.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LI
+                </Link>
+              </TableCell>
               <TableCell>{item.numEmployeesEnum}</TableCell>
               <TableCell>{item.categories.join(", ")}</TableCell>
               <TableCell>{item.locationIdentifiers.join(", ")}</TableCell>
@@ -99,7 +109,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={8}>
+            <TableCell colSpan={9}>
               <button onClick={onDeleteSelected}>Delete Selected</button>
             </TableCell>
           </TableRow>
