@@ -6,7 +6,10 @@ interface FileActionsProps {
   filteredData: DataItem[];
 }
 
-const FileActions: React.FC<FileActionsProps> = ({ setData, filteredData }) => {
+export const FileActions: React.FC<FileActionsProps> = ({
+  setData,
+  filteredData,
+}) => {
   const handleLoadFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -35,5 +38,3 @@ const FileActions: React.FC<FileActionsProps> = ({ setData, filteredData }) => {
     </div>
   );
 };
-
-export default FileActions;

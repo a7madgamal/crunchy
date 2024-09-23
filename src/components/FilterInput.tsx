@@ -28,7 +28,7 @@ interface FilterInputProps {
   ) => void;
 }
 
-const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
+export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
   const { control, watch } = useForm<{
     name: string;
     numEmployees: string[];
@@ -195,5 +195,3 @@ const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
     </div>
   );
 };
-
-export default FilterInput;

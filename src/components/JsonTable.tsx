@@ -25,7 +25,7 @@ interface JsonTableProps {
   };
 }
 
-const JsonTable: React.FC<JsonTableProps> = ({
+export const JsonTable: React.FC<JsonTableProps> = ({
   tableData,
   selectedRows,
   onSelectRow,
@@ -89,5 +89,3 @@ const JsonTable: React.FC<JsonTableProps> = ({
     </TableContainer>
   );
 };
-
-export default JsonTable;

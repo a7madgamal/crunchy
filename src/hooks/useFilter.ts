@@ -11,7 +11,7 @@ export interface DataItem {
 
 type SortableColumn = "rankOrgCompany";
 
-const useFilter = () => {
+export const useFilter = () => {
   const [filteredData, setFilteredData] = useState<DataItem[]>([]);
   const [activeSort, setActiveSort] = useState<{
     column: SortableColumn;
@@ -84,5 +84,3 @@ const useFilter = () => {
 
   return { sortedData, updateFilters, setFilteredData, handleSort, activeSort };
 };
-
-export default useFilter;

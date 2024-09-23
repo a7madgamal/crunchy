@@ -1,11 +1,12 @@
 import React from "react";
-import FilterInput from "./components/FilterInput";
-import JsonTable from "./components/JsonTable";
-import FileActions from "./components/FileActions";
 import { Container } from "@mui/material";
-import useFilter from "./hooks/useFilter";
 
-const App: React.FC = () => {
+import { FilterInput } from "./components/FilterInput";
+import { JsonTable } from "./components/JsonTable";
+import { FileActions } from "./components/FileActions";
+import { useFilter } from "./hooks/useFilter";
+
+export const App: React.FC = () => {
   const { sortedData, updateFilters, setFilteredData, handleSort, activeSort } =
     useFilter();
   const [selectedRows, setSelectedRows] = React.useState<number[]>([]);
@@ -50,5 +51,3 @@ const App: React.FC = () => {
     </Container>
   );
 };
-
-export default App;
