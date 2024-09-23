@@ -10,6 +10,7 @@ import {
   Checkbox,
   TableFooter,
   Link,
+  Tooltip,
 } from "@mui/material";
 import { DataItem } from "../hooks/useFilter";
 
@@ -36,7 +37,10 @@ const JsonTable: React.FC<JsonTableProps> = ({
   sort,
 }) => {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer
+      component={Paper}
+      sx={{ maxWidth: "100%", width: "1400px" }}
+    >
       <Table>
         <TableHead>
           <TableRow>
@@ -48,15 +52,16 @@ const JsonTable: React.FC<JsonTableProps> = ({
             </TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Website</TableCell>
-            <TableCell>LinkedIn</TableCell>
-            <TableCell>Num Employees</TableCell>
-            <TableCell>Categories</TableCell>
+            <TableCell>LI</TableCell>
+            <TableCell>Desc</TableCell>
+            <TableCell>Num</TableCell>
+            <TableCell>Cat</TableCell>
             <TableCell>Locations</TableCell>
             <TableCell
               onClick={() => handleSort("rankOrgCompany")}
               style={{ cursor: "pointer" }}
             >
-              Rank Org Company{" "}
+              Ranking
               {sort.column === "rankOrgCompany" &&
                 (sort.order === "asc" ? "▲" : "▼")}
             </TableCell>
@@ -99,6 +104,20 @@ const JsonTable: React.FC<JsonTableProps> = ({
                   LI
                 </Link>
               </TableCell>
+              <TableCell>
+                <Tooltip title={item.shortDescription} arrow>
+                  <div
+                    style={{
+                      maxWidth: "200px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {item.shortDescription}
+                  </div>
+                </Tooltip>
+              </TableCell>
               <TableCell>{item.numEmployeesEnum}</TableCell>
               <TableCell>{item.categories.join(", ")}</TableCell>
               <TableCell>{item.locationIdentifiers.join(", ")}</TableCell>
@@ -109,7 +128,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={9}>
+            <TableCell colSpan={10}>
               <button onClick={onDeleteSelected}>Delete Selected</button>
             </TableCell>
           </TableRow>

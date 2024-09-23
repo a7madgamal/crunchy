@@ -21,7 +21,7 @@ interface FilterInputProps {
   updateFilters: (
     nameFilter: string,
     numEmployeesFilter: string[],
-    categoriesFilter: string[],
+    categoryGroupsFilter: string[],
     locationFilter: string[],
     rankOrgCompanyFilter: number | null,
     revenueRangeFilter: string[]
@@ -32,7 +32,7 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
   const { control, watch } = useForm<{
     name: string;
     numEmployees: string[];
-    categories: string[];
+    categoryGroups: string[];
     locationIdentifiers: string[];
     rankOrgCompany: number | "";
     revenueRange: string[];
@@ -40,7 +40,7 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
     defaultValues: {
       name: "",
       numEmployees: [],
-      categories: [],
+      categoryGroups: [],
       locationIdentifiers: [],
       rankOrgCompany: "",
       revenueRange: [],
@@ -49,7 +49,7 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
 
   const watchName = watch("name");
   const watchNumEmployees = watch("numEmployees");
-  const watchCategories = watch("categories");
+  const watchCategoryGroups = watch("categoryGroups");
   const watchLocationIdentifiers = watch("locationIdentifiers");
   const watchRankOrgCompany = watch("rankOrgCompany");
   const watchRevenueRange = watch("revenueRange");
@@ -61,7 +61,7 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
     updateFilters(
       watchName,
       watchNumEmployees,
-      watchCategories,
+      watchCategoryGroups,
       watchLocationIdentifiers,
       rankValue,
       watchRevenueRange
@@ -69,7 +69,7 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
   }, [
     watchName,
     watchNumEmployees,
-    watchCategories,
+    watchCategoryGroups,
     watchLocationIdentifiers,
     watchRankOrgCompany,
     watchRevenueRange,
@@ -114,11 +114,11 @@ export const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
       />
 
       <Controller
-        name="categories"
+        name="categoryGroups"
         control={control}
         render={({ field }) => (
           <FormControl fullWidth>
-            <InputLabel>Filter by Categories</InputLabel>
+            <InputLabel>Category Groups</InputLabel>
             <Select
               {...field}
               multiple
