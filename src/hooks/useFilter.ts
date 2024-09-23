@@ -14,14 +14,13 @@ const useFilter = (data: DataItem[]) => {
     revenueRangeFilter: string[]
   ) => {
     const filtered = data.filter((item) => {
-      const nameMatches = item.name
-        .toLowerCase()
-        .includes(nameFilter.toLowerCase());
+      const nameMatches =
+        item.name === "" ||
+        item.name.toLowerCase().includes(nameFilter.toLowerCase());
+
       const numEmployeesMatches =
         numEmployeesFilter.length === 0 ||
-        numEmployeesFilter.some((filterValue) =>
-          item.numEmployeesEnum.includes(filterValue)
-        );
+        numEmployeesFilter.includes(item.numEmployeesEnum);
 
       const categoriesMatch =
         categoriesFilter.length === 0 ||

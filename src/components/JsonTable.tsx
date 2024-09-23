@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -10,15 +10,7 @@ import {
   Checkbox,
   TableFooter,
 } from "@mui/material";
-
-interface DataItem {
-  name: string;
-  numEmployeesEnum: string[];
-  categories: string[];
-  locationIdentifiers: string[];
-  rankOrgCompany: number;
-  revenueRange: string[];
-}
+import { DataItem } from "../App";
 
 interface JsonTableProps {
   tableData: DataItem[];
@@ -27,6 +19,7 @@ interface JsonTableProps {
   onSelectAll: (select: boolean) => void;
   onDeleteSelected: () => void;
 }
+type SortableColumn = "rankOrgCompany";
 
 const JsonTable: React.FC<JsonTableProps> = ({
   tableData,
@@ -35,10 +28,32 @@ const JsonTable: React.FC<JsonTableProps> = ({
   onSelectAll,
   onDeleteSelected,
 }) => {
-  const handleSelectAll = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const selectAll = event.target.checked;
-    onSelectAll(selectAll);
+  const [sort, setSort] = useState<{
+    column: SortableColumn;
+    order: "asc" | "desc";
+  }>({
+    column: "rankOrgCompany",
+    order: "desc",
+  });
+
+  const handleSort = (column: SortableColumn) => {
+    if (column === sort.column) {
+      setSort((prev) => ({
+        ...prev,
+        order: prev.order === "asc" ? "desc" : "asc",
+      }));
+    } else {
+      setSort({ column, order: "asc" });
+    }
   };
+
+  const sortedData = tableData.sort((a, b) => {
+    if (sort.order === "asc") {
+      return a[sort.column] - b[sort.column];
+    } else {
+      return b[sort.column] - a[sort.column];
+    }
+  });
 
   return (
     <TableContainer component={Paper}>
@@ -48,45 +63,46 @@ const JsonTable: React.FC<JsonTableProps> = ({
             <TableCell>
               <Checkbox
                 checked={selectedRows.length === tableData.length}
-                onChange={handleSelectAll}
+                onChange={(event) => onSelectAll(event.target.checked)}
               />
             </TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Num Employees</TableCell>
             <TableCell>Categories</TableCell>
             <TableCell>Locations</TableCell>
-            <TableCell>Rank</TableCell>
+            <TableCell
+              onClick={() => handleSort("rankOrgCompany")}
+              style={{ cursor: "pointer" }}
+            >
+              Rank {sort.order === "asc" ? "↑" : "↓"}
+            </TableCell>
             <TableCell>Revenue Range</TableCell>
           </TableRow>
         </TableHead>
 
         <TableBody>
-          {tableData.map((item, index) => {
-            console.log({ numEmployeesEnum: item });
-
-            return (
-              <TableRow key={index}>
-                <TableCell>
-                  <Checkbox
-                    checked={selectedRows.includes(index)}
-                    onChange={() => onSelectRow(index)}
-                  />
-                </TableCell>
-                <TableCell>{item.name}</TableCell>
-                <TableCell>{item.numEmployeesEnum}</TableCell>
-                <TableCell>
-                  {item.categories ? item.categories.join(", ") : ""}
-                </TableCell>
-                <TableCell>
-                  {item.locationIdentifiers
-                    ? item.locationIdentifiers.join(", ")
-                    : ""}
-                </TableCell>
-                <TableCell>{item.rankOrgCompany}</TableCell>
-                <TableCell>{item.revenueRange}</TableCell>
-              </TableRow>
-            );
-          })}
+          {sortedData.map((item, index) => (
+            <TableRow key={index}>
+              <TableCell>
+                <Checkbox
+                  checked={selectedRows.includes(index)}
+                  onChange={() => onSelectRow(index)}
+                />
+              </TableCell>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.numEmployeesEnum}</TableCell>
+              <TableCell>
+                {item.categories ? item.categories.join(", ") : ""}
+              </TableCell>
+              <TableCell>
+                {item.locationIdentifiers
+                  ? item.locationIdentifiers.join(", ")
+                  : ""}
+              </TableCell>
+              <TableCell>{item.rankOrgCompany}</TableCell>
+              <TableCell>{item.revenueRange}</TableCell>
+            </TableRow>
+          ))}
         </TableBody>
         <TableFooter>
           <TableRow>

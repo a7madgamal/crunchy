@@ -8,7 +8,7 @@ import useFilter from "./hooks/useFilter";
 
 export interface DataItem {
   name: string;
-  numEmployeesEnum: string[];
+  numEmployeesEnum: string;
   categories: string[];
   locationIdentifiers: string[];
   rankOrgCompany: number;
@@ -16,7 +16,6 @@ export interface DataItem {
 }
 
 const App: React.FC = () => {
-  console.log("app rerender");
   const [data, setData] = useState<DataItem[]>([]);
   const { filteredData, updateFilters } = useFilter(data);
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
