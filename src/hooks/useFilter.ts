@@ -19,7 +19,9 @@ const useFilter = (data: DataItem[]) => {
         .includes(nameFilter.toLowerCase());
       const numEmployeesMatches =
         numEmployeesFilter.length === 0 ||
-        numEmployeesFilter.includes(item.numEmployeesEnum[0]);
+        numEmployeesFilter.some((filterValue) =>
+          item.numEmployeesEnum.includes(filterValue)
+        );
 
       const categoriesMatch =
         categoriesFilter.length === 0 ||

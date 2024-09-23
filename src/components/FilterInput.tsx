@@ -55,6 +55,7 @@ const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
   const watchRevenueRange = watch("revenueRange");
 
   useEffect(() => {
+    console.log("filter input useeffect");
     const rankValue = watchRankOrgCompany ? Number(watchRankOrgCompany) : null;
 
     updateFilters(
