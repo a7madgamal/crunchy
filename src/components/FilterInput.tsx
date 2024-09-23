@@ -1,5 +1,5 @@
 // src/components/FilterInput.tsx
-import React from "react";
+import React, { FC, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import {
   TextField,
@@ -10,10 +10,15 @@ import {
   InputLabel,
   FormControl,
 } from "@mui/material";
-import { numEmployeesOptions, revenueOptions } from "../filters/filterOptions";
+import {
+  CATEGORY_GROUPS_FILTER,
+  LOCATION_FILTER,
+  NUM_EMPLOYEES,
+  REV_OPTIONS,
+} from "../filters/filterOptions";
 
 interface FilterInputProps {
-  onFilterChange: (
+  updateFilters: (
     nameFilter: string,
     numEmployeesFilter: string[],
     categoriesFilter: string[],
@@ -23,8 +28,15 @@ interface FilterInputProps {
   ) => void;
 }
 
-const FilterInput: React.FC<FilterInputProps> = ({ onFilterChange }) => {
-  const { control, watch } = useForm({
+const FilterInput: FC<FilterInputProps> = ({ updateFilters }) => {
+  const { control, watch } = useForm<{
+    name: string;
+    numEmployees: string[];
+    categories: string[];
+    locationIdentifiers: string[];
+    rankOrgCompany: number | "";
+    revenueRange: string[];
+  }>({
     defaultValues: {
       name: "",
       numEmployees: [],
@@ -42,9 +54,10 @@ const FilterInput: React.FC<FilterInputProps> = ({ onFilterChange }) => {
   const watchRankOrgCompany = watch("rankOrgCompany");
   const watchRevenueRange = watch("revenueRange");
 
-  React.useEffect(() => {
+  useEffect(() => {
     const rankValue = watchRankOrgCompany ? Number(watchRankOrgCompany) : null;
-    onFilterChange(
+
+    updateFilters(
       watchName,
       watchNumEmployees,
       watchCategories,
@@ -59,6 +72,7 @@ const FilterInput: React.FC<FilterInputProps> = ({ onFilterChange }) => {
     watchLocationIdentifiers,
     watchRankOrgCompany,
     watchRevenueRange,
+    // updateFilters,
   ]);
 
   return (
@@ -81,15 +95,15 @@ const FilterInput: React.FC<FilterInputProps> = ({ onFilterChange }) => {
         control={control}
         render={({ field }) => (
           <FormControl fullWidth>
-            <InputLabel>Filter by Employees</InputLabel>
+            <InputLabel>Num of Employees</InputLabel>
             <Select
               {...field}
               multiple
               renderValue={(selected) => (selected as string[]).join(", ")}
             >
-              {numEmployeesOptions.map((option) => (
+              {NUM_EMPLOYEES.map((option) => (
                 <MenuItem key={option} value={option}>
-                  <Checkbox checked={field.value.includes(option as any)} />
+                  <Checkbox checked={field.value.includes(option)} />
                   <ListItemText primary={option} />
                 </MenuItem>
               ))}
@@ -109,7 +123,12 @@ const FilterInput: React.FC<FilterInputProps> = ({ onFilterChange }) => {
               multiple
               renderValue={(selected) => (selected as string[]).join(", ")}
             >
-              {/* Add your category options here */}
+              {CATEGORY_GROUPS_FILTER.map((option) => (
+                <MenuItem key={option} value={option}>
+                  <Checkbox checked={field.value.includes(option)} />
+                  <ListItemText primary={option} />
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         )}
@@ -126,7 +145,12 @@ const FilterInput: React.FC<FilterInputProps> = ({ onFilterChange }) => {
               multiple
               renderValue={(selected) => (selected as string[]).join(", ")}
             >
-              {/* Add your location options here */}
+              {LOCATION_FILTER.map((option) => (
+                <MenuItem key={option} value={option}>
+                  <Checkbox checked={field.value.includes(option)} />
+                  <ListItemText primary={option} />
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         )}
@@ -138,7 +162,7 @@ const FilterInput: React.FC<FilterInputProps> = ({ onFilterChange }) => {
         render={({ field }) => (
           <TextField
             {...field}
-            label="Rank (≤)"
+            label="Crunchbase rank (≤)"
             type="number"
             variant="outlined"
             fullWidth
@@ -157,7 +181,7 @@ const FilterInput: React.FC<FilterInputProps> = ({ onFilterChange }) => {
               multiple
               renderValue={(selected) => (selected as string[]).join(", ")}
             >
-              {revenueOptions.map((option) => (
+              {REV_OPTIONS.map((option) => (
                 <MenuItem key={option} value={option}>
                   <Checkbox checked={field.value.includes(option)} />
                   <ListItemText primary={option} />

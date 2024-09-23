@@ -1,4 +1,3 @@
-// src/components/JsonTable.tsx
 import React from "react";
 import {
   Table,
@@ -22,7 +21,7 @@ interface DataItem {
 }
 
 interface JsonTableProps {
-  data: DataItem[];
+  tableData: DataItem[];
   selectedRows: number[];
   onSelectRow: (rowIndex: number) => void;
   onSelectAll: (select: boolean) => void;
@@ -30,7 +29,7 @@ interface JsonTableProps {
 }
 
 const JsonTable: React.FC<JsonTableProps> = ({
-  data,
+  tableData,
   selectedRows,
   onSelectRow,
   onSelectAll,
@@ -48,7 +47,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
           <TableRow>
             <TableCell>
               <Checkbox
-                checked={selectedRows.length === data.length}
+                checked={selectedRows.length === tableData.length}
                 onChange={handleSelectAll}
               />
             </TableCell>
@@ -60,23 +59,34 @@ const JsonTable: React.FC<JsonTableProps> = ({
             <TableCell>Revenue Range</TableCell>
           </TableRow>
         </TableHead>
+
         <TableBody>
-          {data.map((item, index) => (
-            <TableRow key={index}>
-              <TableCell>
-                <Checkbox
-                  checked={selectedRows.includes(index)}
-                  onChange={() => onSelectRow(index)}
-                />
-              </TableCell>
-              <TableCell>{item.name}</TableCell>
-              <TableCell>{item.numEmployeesEnum.join(", ")}</TableCell>
-              <TableCell>{item.categories.join(", ")}</TableCell>
-              <TableCell>{item.locationIdentifiers.join(", ")}</TableCell>
-              <TableCell>{item.rankOrgCompany}</TableCell>
-              <TableCell>{item.revenueRange.join(", ")}</TableCell>
-            </TableRow>
-          ))}
+          {tableData.map((item, index) => {
+            console.log({ numEmployeesEnum: item });
+
+            return (
+              <TableRow key={index}>
+                <TableCell>
+                  <Checkbox
+                    checked={selectedRows.includes(index)}
+                    onChange={() => onSelectRow(index)}
+                  />
+                </TableCell>
+                <TableCell>{item.name}</TableCell>
+                <TableCell>{item.numEmployeesEnum}</TableCell>
+                <TableCell>
+                  {item.categories ? item.categories.join(", ") : ""}
+                </TableCell>
+                <TableCell>
+                  {item.locationIdentifiers
+                    ? item.locationIdentifiers.join(", ")
+                    : ""}
+                </TableCell>
+                <TableCell>{item.rankOrgCompany}</TableCell>
+                <TableCell>{item.revenueRange}</TableCell>
+              </TableRow>
+            );
+          })}
         </TableBody>
         <TableFooter>
           <TableRow>

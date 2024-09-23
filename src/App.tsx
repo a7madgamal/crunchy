@@ -16,16 +16,17 @@ export interface DataItem {
 }
 
 const App: React.FC = () => {
+  console.log("app rerender");
   const [data, setData] = useState<DataItem[]>([]);
-  const { filteredData, filterData } = useFilter(data);
+  const { filteredData, updateFilters } = useFilter(data);
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
 
   const handleSelectRow = (rowIndex: number) => {
-    setSelectedRows((prev) =>
-      prev.includes(rowIndex)
+    setSelectedRows((prev) => {
+      return prev.includes(rowIndex)
         ? prev.filter((index) => index !== rowIndex)
-        : [...prev, rowIndex]
-    );
+        : [...prev, rowIndex];
+    });
   };
 
   const handleSelectAll = (select: boolean) => {
@@ -38,16 +39,16 @@ const App: React.FC = () => {
 
   const handleDeleteSelected = () => {
     setData((prev) => prev.filter((_, index) => !selectedRows.includes(index)));
-    setSelectedRows([]); // Clear selection after deletion
+    setSelectedRows([]);
   };
 
   return (
     <Container>
       <h1>JSON File Table with Filters</h1>
       <FileActions setData={setData} filteredData={filteredData} />
-      <FilterInput onFilterChange={filterData} />
+      <FilterInput updateFilters={updateFilters} />
       <JsonTable
-        data={filteredData}
+        tableData={filteredData}
         selectedRows={selectedRows}
         onSelectRow={handleSelectRow}
         onSelectAll={handleSelectAll}

@@ -2,9 +2,10 @@ import { useState } from "react";
 import { DataItem } from "../App";
 
 const useFilter = (data: DataItem[]) => {
+  console.log("usefilter");
   const [filteredData, setFilteredData] = useState<DataItem[]>(data);
 
-  const filterData = (
+  const updateFilters = (
     nameFilter: string,
     numEmployeesFilter: string[],
     categoriesFilter: string[],
@@ -19,15 +20,19 @@ const useFilter = (data: DataItem[]) => {
       const numEmployeesMatches =
         numEmployeesFilter.length === 0 ||
         numEmployeesFilter.includes(item.numEmployeesEnum[0]);
+
       const categoriesMatch =
         categoriesFilter.length === 0 ||
         categoriesFilter.some((cat) => item.categories.includes(cat));
+
       const locationsMatch =
         locationFilter.length === 0 ||
         locationFilter.some((loc) => item.locationIdentifiers.includes(loc));
+
       const rankMatches =
         rankOrgCompanyFilter === null ||
         item.rankOrgCompany <= rankOrgCompanyFilter;
+
       const revenueMatches =
         revenueRangeFilter.length === 0 ||
         revenueRangeFilter.some((rev) => item.revenueRange.includes(rev));
@@ -41,10 +46,11 @@ const useFilter = (data: DataItem[]) => {
         revenueMatches
       );
     });
+
     setFilteredData(filtered);
   };
 
-  return { filteredData, filterData };
+  return { filteredData, updateFilters };
 };
 
 export default useFilter;
