@@ -2,6 +2,20 @@ import { useState } from "react";
 
 export interface DataItem {
   name: string;
+  companyCBUrl: string;
+  image: string;
+  shortDescription: string;
+  description: string;
+  website: string;
+  linkedin: string;
+  contactEmail: string;
+  phoneNumber: string;
+  categoryGroups: string[];
+  founderIdentifiers: string[];
+  investorIdentifiers: string[];
+  acquirerIdentifier: string[];
+  fundingTotal: string;
+
   numEmployeesEnum: string;
   categories: string[];
   locationIdentifiers: string[];

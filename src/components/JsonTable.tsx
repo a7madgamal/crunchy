@@ -9,6 +9,7 @@ import {
   Paper,
   Checkbox,
   TableFooter,
+  Link,
 } from "@mui/material";
 import { DataItem } from "../hooks/useFilter";
 
@@ -53,7 +54,7 @@ export const JsonTable: React.FC<JsonTableProps> = ({
               onClick={() => handleSort("rankOrgCompany")}
               style={{ cursor: "pointer" }}
             >
-              Rank Org Company
+              Rank Org Company{" "}
               {sort.column === "rankOrgCompany" &&
                 (sort.order === "asc" ? "▲" : "▼")}
             </TableCell>
@@ -69,7 +70,15 @@ export const JsonTable: React.FC<JsonTableProps> = ({
                   onChange={() => onSelectRow(index)}
                 />
               </TableCell>
-              <TableCell>{item.name}</TableCell>
+              <TableCell>
+                <Link
+                  href={item.companyCBUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.name}
+                </Link>
+              </TableCell>
               <TableCell>{item.numEmployeesEnum}</TableCell>
               <TableCell>{item.categories.join(", ")}</TableCell>
               <TableCell>{item.locationIdentifiers.join(", ")}</TableCell>
