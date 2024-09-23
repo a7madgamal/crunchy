@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Table,
   TableBody,
@@ -18,8 +18,12 @@ interface JsonTableProps {
   onSelectRow: (rowIndex: number) => void;
   onSelectAll: (select: boolean) => void;
   onDeleteSelected: () => void;
+  handleSort: (column: "rankOrgCompany") => void;
+  sort: {
+    column: "rankOrgCompany";
+    order: "asc" | "desc";
+  };
 }
-type SortableColumn = "rankOrgCompany";
 
 const JsonTable: React.FC<JsonTableProps> = ({
   tableData,
@@ -27,34 +31,9 @@ const JsonTable: React.FC<JsonTableProps> = ({
   onSelectRow,
   onSelectAll,
   onDeleteSelected,
+  handleSort,
+  sort,
 }) => {
-  const [sort, setSort] = useState<{
-    column: SortableColumn;
-    order: "asc" | "desc";
-  }>({
-    column: "rankOrgCompany",
-    order: "desc",
-  });
-
-  const handleSort = (column: SortableColumn) => {
-    if (column === sort.column) {
-      setSort((prev) => ({
-        ...prev,
-        order: prev.order === "asc" ? "desc" : "asc",
-      }));
-    } else {
-      setSort({ column, order: "asc" });
-    }
-  };
-
-  const sortedData = tableData.sort((a, b) => {
-    if (sort.order === "asc") {
-      return a[sort.column] - b[sort.column];
-    } else {
-      return b[sort.column] - a[sort.column];
-    }
-  });
-
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -74,14 +53,15 @@ const JsonTable: React.FC<JsonTableProps> = ({
               onClick={() => handleSort("rankOrgCompany")}
               style={{ cursor: "pointer" }}
             >
-              Rank {sort.order === "asc" ? "↑" : "↓"}
+              Rank Org Company
+              {sort.column === "rankOrgCompany" &&
+                (sort.order === "asc" ? "▲" : "▼")}
             </TableCell>
             <TableCell>Revenue Range</TableCell>
           </TableRow>
         </TableHead>
-
         <TableBody>
-          {sortedData.map((item, index) => (
+          {tableData.map((item, index) => (
             <TableRow key={index}>
               <TableCell>
                 <Checkbox
@@ -91,14 +71,8 @@ const JsonTable: React.FC<JsonTableProps> = ({
               </TableCell>
               <TableCell>{item.name}</TableCell>
               <TableCell>{item.numEmployeesEnum}</TableCell>
-              <TableCell>
-                {item.categories ? item.categories.join(", ") : ""}
-              </TableCell>
-              <TableCell>
-                {item.locationIdentifiers
-                  ? item.locationIdentifiers.join(", ")
-                  : ""}
-              </TableCell>
+              <TableCell>{item.categories.join(", ")}</TableCell>
+              <TableCell>{item.locationIdentifiers.join(", ")}</TableCell>
               <TableCell>{item.rankOrgCompany}</TableCell>
               <TableCell>{item.revenueRange}</TableCell>
             </TableRow>

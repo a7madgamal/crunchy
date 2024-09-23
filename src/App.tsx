@@ -6,7 +6,8 @@ import { Container } from "@mui/material";
 import useFilter from "./hooks/useFilter";
 
 const App: React.FC = () => {
-  const { filteredData, updateFilters, setFilteredData } = useFilter();
+  const { sortedData, updateFilters, setFilteredData, handleSort, activeSort } =
+    useFilter();
   const [selectedRows, setSelectedRows] = React.useState<number[]>([]);
 
   const handleSelectRow = (rowIndex: number) => {
@@ -19,7 +20,7 @@ const App: React.FC = () => {
 
   const handleSelectAll = (select: boolean) => {
     if (select) {
-      setSelectedRows(filteredData.map((_, index) => index));
+      setSelectedRows(sortedData.map((_, index) => index));
     } else {
       setSelectedRows([]);
     }
@@ -35,14 +36,16 @@ const App: React.FC = () => {
   return (
     <Container>
       <h1>JSON File Table with Filters</h1>
-      <FileActions setData={setFilteredData} filteredData={filteredData} />
+      <FileActions setData={setFilteredData} filteredData={sortedData} />
       <FilterInput updateFilters={updateFilters} />
       <JsonTable
-        tableData={filteredData}
+        tableData={sortedData}
         selectedRows={selectedRows}
         onSelectRow={handleSelectRow}
         onSelectAll={handleSelectAll}
         onDeleteSelected={handleDeleteSelected}
+        handleSort={handleSort}
+        sort={activeSort}
       />
     </Container>
   );

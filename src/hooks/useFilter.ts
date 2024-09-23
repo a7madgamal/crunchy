@@ -9,8 +9,17 @@ export interface DataItem {
   revenueRange: string[];
 }
 
+type SortableColumn = "rankOrgCompany";
+
 const useFilter = () => {
   const [filteredData, setFilteredData] = useState<DataItem[]>([]);
+  const [activeSort, setActiveSort] = useState<{
+    column: SortableColumn;
+    order: "asc" | "desc";
+  }>({
+    column: "rankOrgCompany",
+    order: "desc",
+  });
 
   const updateFilters = (
     nameFilter: string,
@@ -58,7 +67,22 @@ const useFilter = () => {
     setFilteredData(filtered);
   };
 
-  return { filteredData, updateFilters, setFilteredData };
+  const handleSort = (column: SortableColumn) => {
+    setActiveSort((prev) => ({
+      column,
+      order: prev.column === column && prev.order === "asc" ? "desc" : "asc",
+    }));
+  };
+
+  const sortedData = [...filteredData].sort((a, b) => {
+    if (activeSort.order === "asc") {
+      return a[activeSort.column] - b[activeSort.column];
+    } else {
+      return b[activeSort.column] - a[activeSort.column];
+    }
+  });
+
+  return { sortedData, updateFilters, setFilteredData, handleSort, activeSort };
 };
 
 export default useFilter;
