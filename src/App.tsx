@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import { Container } from "@mui/material";
 
 import { FilterInput } from "./components/FilterInput";
@@ -6,10 +6,15 @@ import { JsonTable } from "./components/JsonTable";
 import { FileActions } from "./components/FileActions";
 import { useFilter } from "./hooks/useFilter";
 
-export const App: React.FC = () => {
-  const { sortedData, updateFilters, setFilteredData, handleSort, activeSort } =
-    useFilter();
-  const [selectedRows, setSelectedRows] = React.useState<number[]>([]);
+export const App: FC = () => {
+  const {
+    filteredData,
+    updateFilters,
+    setFilteredData,
+    handleSort,
+    activeSort,
+  } = useFilter();
+  const [selectedRows, setSelectedRows] = useState<number[]>([]);
   const [locationFilter, setLocationFilter] = useState<string[]>([]);
 
   const handleSelectRow = (rowIndex: number) => {
@@ -22,7 +27,7 @@ export const App: React.FC = () => {
 
   const handleSelectAll = (select: boolean) => {
     if (select) {
-      setSelectedRows(sortedData.map((_, index) => index));
+      setSelectedRows(filteredData.map((_, index) => index));
     } else {
       setSelectedRows([]);
     }
@@ -40,7 +45,7 @@ export const App: React.FC = () => {
       <h1>JSON File Table with Filters</h1>
       <FileActions
         setData={setFilteredData}
-        filteredData={sortedData}
+        filteredData={filteredData}
         setLocationFilter={setLocationFilter}
       />
       <FilterInput
@@ -48,7 +53,7 @@ export const App: React.FC = () => {
         locationFilter={locationFilter}
       />
       <JsonTable
-        tableData={sortedData}
+        tableData={filteredData}
         selectedRows={selectedRows}
         onSelectRow={handleSelectRow}
         onSelectAll={handleSelectAll}

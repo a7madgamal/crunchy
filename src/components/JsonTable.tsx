@@ -12,7 +12,7 @@ import {
   Link,
   Tooltip,
 } from "@mui/material";
-import { DataItem } from "../hooks/useFilter";
+import { DataItem, SortableColumn } from "../filters/filterOptions";
 
 interface JsonTableProps {
   tableData: DataItem[];
@@ -20,9 +20,9 @@ interface JsonTableProps {
   onSelectRow: (rowIndex: number) => void;
   onSelectAll: (select: boolean) => void;
   onDeleteSelected: () => void;
-  handleSort: (column: "rankOrgCompany") => void;
+  handleSort: (column: SortableColumn) => void;
   sort: {
-    column: "rankOrgCompany";
+    column: SortableColumn;
     order: "asc" | "desc";
   };
 }
@@ -54,7 +54,14 @@ const JsonTable: React.FC<JsonTableProps> = ({
             <TableCell>Website</TableCell>
             <TableCell>LI</TableCell>
             <TableCell>Desc</TableCell>
-            <TableCell>Num</TableCell>
+            <TableCell
+              onClick={() => handleSort("numEmployeesEnum")}
+              style={{ cursor: "pointer" }}
+            >
+              Num
+              {sort.column === "numEmployeesEnum" &&
+                (sort.order === "asc" ? "▲" : "▼")}
+            </TableCell>
             <TableCell>Cat</TableCell>
             <TableCell>Locations</TableCell>
             <TableCell

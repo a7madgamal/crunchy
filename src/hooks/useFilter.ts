@@ -1,29 +1,9 @@
-import { useState } from "react";
-
-export interface DataItem {
-  name: string;
-  companyCBUrl: string;
-  image: string;
-  shortDescription: string;
-  description: string;
-  website: string;
-  linkedin: string;
-  contactEmail: string;
-  phoneNumber: string;
-  categoryGroups: string[];
-  founderIdentifiers: string[];
-  investorIdentifiers: string[];
-  acquirerIdentifier: string[];
-  fundingTotal: string;
-
-  numEmployeesEnum: string;
-  categories: string[];
-  locationIdentifiers: string[];
-  rankOrgCompany: number;
-  revenueRange: string[];
-}
-
-type SortableColumn = "rankOrgCompany";
+import { useEffect, useState } from "react";
+import {
+  DataItem,
+  NUM_EMPLOYEES,
+  SortableColumn,
+} from "../filters/filterOptions";
 
 export const useFilter = () => {
   const [filteredData, setFilteredData] = useState<DataItem[]>([]);
@@ -34,6 +14,30 @@ export const useFilter = () => {
     column: "rankOrgCompany",
     order: "desc",
   });
+
+  useEffect(() => {
+    let sortedData = [...filteredData];
+
+    if (activeSort.column === "numEmployeesEnum") {
+      sortedData.sort((a, b) => {
+        const aIndex = NUM_EMPLOYEES.indexOf(a.numEmployeesEnum);
+        const bIndex = NUM_EMPLOYEES.indexOf(b.numEmployeesEnum);
+        if (aIndex === -1) return 1; // a is empty, put it at the end
+        if (bIndex === -1) return -1; // b is empty, put it at the end
+        return activeSort.order === "asc" ? aIndex - bIndex : bIndex - aIndex;
+      });
+    } else {
+      sortedData.sort((a, b) => {
+        const aValue = a[activeSort.column];
+        const bValue = b[activeSort.column];
+        if (aValue < bValue) return activeSort.order === "asc" ? -1 : 1;
+        if (aValue > bValue) return activeSort.order === "asc" ? 1 : -1;
+        return 0;
+      });
+    }
+
+    setFilteredData(sortedData);
+  }, [activeSort]); //filteredData
 
   const updateFilters = (
     nameFilter: string,
@@ -88,13 +92,11 @@ export const useFilter = () => {
     }));
   };
 
-  const sortedData = [...filteredData].sort((a, b) => {
-    if (activeSort.order === "asc") {
-      return a[activeSort.column] - b[activeSort.column];
-    } else {
-      return b[activeSort.column] - a[activeSort.column];
-    }
-  });
-
-  return { sortedData, updateFilters, setFilteredData, handleSort, activeSort };
+  return {
+    filteredData,
+    updateFilters,
+    setFilteredData,
+    handleSort,
+    activeSort,
+  };
 };

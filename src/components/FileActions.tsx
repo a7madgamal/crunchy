@@ -1,5 +1,5 @@
 import React from "react";
-import { DataItem } from "../hooks/useFilter";
+import { DataItem } from "../filters/filterOptions";
 
 interface FileActionsProps {
   setData: React.Dispatch<React.SetStateAction<DataItem[]>>;

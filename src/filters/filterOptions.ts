@@ -31,6 +31,29 @@ export type CompanyJson = {
   fundingTotal: string;
 };
 
+export interface DataItem {
+  name: string;
+  companyCBUrl: string;
+  image: string;
+  shortDescription: string;
+  description: string;
+  website: string;
+  linkedin: string;
+  contactEmail: string;
+  phoneNumber: string;
+  categoryGroups: string[];
+  founderIdentifiers: string[];
+  investorIdentifiers: string[];
+  acquirerIdentifier: string[];
+  fundingTotal: string;
+
+  numEmployeesEnum: string;
+  categories: string[];
+  locationIdentifiers: string[];
+  rankOrgCompany: number;
+  revenueRange: string[];
+}
+
 export const REV_OPTIONS = [
   "$10B+",
   "$1B to $10B",
@@ -104,3 +127,5 @@ export const CATEGORY_GROUPS_FILTER = [
   "Blockchain and Cryptocurrency",
   "Platforms",
 ];
+
+export type SortableColumn = "rankOrgCompany" | "numEmployeesEnum";
