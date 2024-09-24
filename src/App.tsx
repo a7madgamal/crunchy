@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import React, { useState } from "react";
 import { Container } from "@mui/material";
 
 import { FilterInput } from "./components/FilterInput";
@@ -6,9 +6,10 @@ import { JsonTable } from "./components/JsonTable";
 import { FileActions } from "./components/FileActions";
 import { useFilter } from "./hooks/useFilter";
 
-export const App: FC = () => {
+export const App: React.FC = () => {
   const {
-    filteredData,
+    setOriginalData,
+    sortedData,
     updateFilters,
     setFilteredData,
     handleSort,
@@ -27,7 +28,7 @@ export const App: FC = () => {
 
   const handleSelectAll = (select: boolean) => {
     if (select) {
-      setSelectedRows(filteredData.map((_, index) => index));
+      setSelectedRows(sortedData.map((_, index) => index));
     } else {
       setSelectedRows([]);
     }
@@ -44,8 +45,8 @@ export const App: FC = () => {
     <Container maxWidth="xl">
       <h1>JSON File Table with Filters</h1>
       <FileActions
-        setData={setFilteredData}
-        filteredData={filteredData}
+        setOriginalData={setOriginalData}
+        filteredData={sortedData}
         setLocationFilter={setLocationFilter}
       />
       <FilterInput
@@ -53,7 +54,7 @@ export const App: FC = () => {
         locationFilter={locationFilter}
       />
       <JsonTable
-        tableData={filteredData}
+        tableData={sortedData}
         selectedRows={selectedRows}
         onSelectRow={handleSelectRow}
         onSelectAll={handleSelectAll}

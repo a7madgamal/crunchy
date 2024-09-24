@@ -96,7 +96,7 @@ export const FilterInput: FC<FilterInputProps> = ({
             <Select
               {...field}
               multiple
-              renderValue={(selected) => (selected as string[]).join(", ")}
+              renderValue={(selected) => selected.join(", ")}
             >
               {NUM_EMPLOYEES.map((option) => (
                 <MenuItem key={option} value={option}>
@@ -118,7 +118,7 @@ export const FilterInput: FC<FilterInputProps> = ({
             <Select
               {...field}
               multiple
-              renderValue={(selected) => (selected as string[]).join(", ")}
+              renderValue={(selected) => selected.join(", ")}
             >
               {CATEGORY_GROUPS_FILTER.map((option) => (
                 <MenuItem key={option} value={option}>
@@ -140,7 +140,7 @@ export const FilterInput: FC<FilterInputProps> = ({
             <Select
               {...field}
               multiple
-              renderValue={(selected) => (selected as string[]).join(", ")}
+              renderValue={(selected) => selected.join(", ")}
             >
               {locationFilter.map((location) => (
                 <MenuItem key={location} value={location}>
@@ -175,7 +175,7 @@ export const FilterInput: FC<FilterInputProps> = ({
             <Select
               {...field}
               multiple
-              renderValue={(selected) => (selected as string[]).join(", ")}
+              renderValue={(selected) => selected.join(", ")}
             >
               {REV_OPTIONS.map((option) => (
                 <MenuItem key={option} value={option}>

@@ -2,13 +2,13 @@ import React from "react";
 import { DataItem } from "../filters/filterOptions";
 
 interface FileActionsProps {
-  setData: React.Dispatch<React.SetStateAction<DataItem[]>>;
+  setOriginalData: React.Dispatch<React.SetStateAction<DataItem[]>>;
   filteredData: DataItem[];
   setLocationFilter: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 export const FileActions: React.FC<FileActionsProps> = ({
-  setData,
+  setOriginalData,
   filteredData,
   setLocationFilter,
 }) => {
@@ -27,7 +27,7 @@ export const FileActions: React.FC<FileActionsProps> = ({
       });
 
       setLocationFilter(Array.from(uniqueLocations).sort());
-      setData(jsonData);
+      setOriginalData(jsonData);
     }
   };
 
