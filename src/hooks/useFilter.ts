@@ -16,6 +16,22 @@ export const useFilter = () => {
     order: "desc",
   });
 
+  const [currentFilters, setCurrentFilters] = useState<{
+    nameFilter: string;
+    numEmployeesFilter: string[];
+    categoriesFilter: string[];
+    locationFilter: string[];
+    rankOrgCompanyFilter: number | null;
+    revenueRangeFilter: string[];
+  }>({
+    nameFilter: "",
+    numEmployeesFilter: [],
+    categoriesFilter: [],
+    locationFilter: [],
+    rankOrgCompanyFilter: null,
+    revenueRangeFilter: [],
+  });
+
   const updateFilters = useCallback(
     (
       nameFilter: string,
@@ -25,6 +41,15 @@ export const useFilter = () => {
       rankOrgCompanyFilter: number | null,
       revenueRangeFilter: string[]
     ) => {
+      setCurrentFilters({
+        nameFilter,
+        numEmployeesFilter,
+        categoriesFilter,
+        locationFilter,
+        rankOrgCompanyFilter,
+        revenueRangeFilter,
+      });
+
       const filtered = originalData.filter((item) => {
         const nameMatches =
           item.name === "" ||
@@ -72,9 +97,16 @@ export const useFilter = () => {
       sorted.sort((a, b) => {
         const aIndex = NUM_EMPLOYEES.indexOf(a.numEmployeesEnum);
         const bIndex = NUM_EMPLOYEES.indexOf(b.numEmployeesEnum);
+        if (aIndex === -1) {
+          console.error(`unknown filter value [${a.numEmployeesEnum}]`);
 
-        if (aIndex === -1) return 1; // a is empty, put it at the end
-        if (bIndex === -1) return -1; // b is empty, put it at the end
+          return 1;
+        }
+        if (bIndex === -1) {
+          console.error(`unknown filter value [${b.numEmployeesEnum}]`);
+
+          return -1;
+        }
 
         return activeSort.order === "asc" ? aIndex - bIndex : bIndex - aIndex;
       });
@@ -94,20 +126,37 @@ export const useFilter = () => {
   }, [filteredData, activeSort]);
 
   useEffect(() => {
-    updateFilters("", [], [], [], null, []);
-  }, [originalData, updateFilters]);
+    updateFilters(
+      currentFilters.nameFilter,
+      currentFilters.numEmployeesFilter,
+      currentFilters.categoriesFilter,
+      currentFilters.locationFilter,
+      currentFilters.rankOrgCompanyFilter,
+      currentFilters.revenueRangeFilter
+    );
+  }, [
+    currentFilters.categoriesFilter,
+    currentFilters.locationFilter,
+    currentFilters.nameFilter,
+    currentFilters.numEmployeesFilter,
+    currentFilters.rankOrgCompanyFilter,
+    currentFilters.revenueRangeFilter,
+    originalData,
+    // updateFilters,
+  ]);
+
+  const handleSort = useCallback((column: SortableColumn) => {
+    setActiveSort((prev) => ({
+      column,
+      order: prev.column === column && prev.order === "asc" ? "desc" : "asc",
+    }));
+  }, []);
 
   return {
     setOriginalData,
     sortedData,
     updateFilters,
-    setFilteredData,
-    handleSort: (column: SortableColumn) => {
-      setActiveSort((prev) => ({
-        column,
-        order: prev.column === column && prev.order === "asc" ? "desc" : "asc",
-      }));
-    },
+    handleSort,
     activeSort,
   };
 };
