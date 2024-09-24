@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import {
   DataItem,
   NUM_EMPLOYEES,
@@ -88,6 +88,10 @@ export const useFilter = () => {
 
     return sorted;
   }, [filteredData, activeSort]);
+
+  useEffect(() => {
+    updateFilters("", [], [], [], null, []);
+  }, [originalData, updateFilters]);
 
   return {
     setOriginalData,

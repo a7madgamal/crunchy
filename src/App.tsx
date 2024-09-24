@@ -48,6 +48,7 @@ export const App: React.FC = () => {
         setOriginalData={setOriginalData}
         filteredData={sortedData}
         setLocationFilter={setLocationFilter}
+        updateFilters={updateFilters}
       />
       <FilterInput
         updateFilters={updateFilters}

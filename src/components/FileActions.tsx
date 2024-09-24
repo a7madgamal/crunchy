@@ -5,12 +5,21 @@ interface FileActionsProps {
   setOriginalData: React.Dispatch<React.SetStateAction<DataItem[]>>;
   filteredData: DataItem[];
   setLocationFilter: React.Dispatch<React.SetStateAction<string[]>>;
+  updateFilters: (
+    nameFilter: string,
+    numEmployeesFilter: string[],
+    categoryGroupsFilter: string[],
+    locationFilter: string[],
+    rankOrgCompanyFilter: number | null,
+    revenueRangeFilter: string[]
+  ) => void;
 }
 
 export const FileActions: React.FC<FileActionsProps> = ({
   setOriginalData,
   filteredData,
   setLocationFilter,
+  updateFilters,
 }) => {
   const handleLoadFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -28,6 +37,8 @@ export const FileActions: React.FC<FileActionsProps> = ({
 
       setLocationFilter(Array.from(uniqueLocations).sort());
       setOriginalData(jsonData);
+
+      updateFilters("", [], [], [], null, []);
     }
   };
 
