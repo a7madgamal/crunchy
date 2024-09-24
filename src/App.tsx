@@ -15,39 +15,13 @@ const darkTheme = createTheme({
 });
 
 export const App: React.FC = () => {
-  const {
-    setOriginalData,
-    sortedData,
-    updateFilters,
-    // setFilteredData,
-    handleSort,
-    activeSort,
-  } = useFilter();
-  const [selectedRows, setSelectedRows] = useState<string[]>([]);
+  const { setOriginalData, sortedData, updateFilters, handleSort, activeSort } =
+    useFilter();
   const [locationFilter, setLocationFilter] = useState<string[]>([]);
   const [categoryGroups, setCategoryGroups] = useState<string[]>([]);
 
-  const handleSelectRow = (rowName: string) => {
-    setSelectedRows((prev) => {
-      return prev.includes(rowName)
-        ? prev.filter((name) => name !== rowName)
-        : [...prev, rowName];
-    });
-  };
-
-  const handleSelectAll = (select: boolean) => {
-    if (select) {
-      setSelectedRows(sortedData.map((item) => item.name));
-    } else {
-      setSelectedRows([]);
-    }
-  };
-
-  const handleDeleteSelected = () => {
-    setOriginalData((prev) =>
-      prev.filter((item) => !selectedRows.includes(item.name))
-    );
-    setSelectedRows([]);
+  const handleDeleteSelected = (name: string) => {
+    setOriginalData((prev) => prev.filter((item) => item.name !== name));
   };
 
   return (
@@ -69,9 +43,6 @@ export const App: React.FC = () => {
         />
         <JsonTable
           tableData={sortedData}
-          selectedRows={selectedRows}
-          onSelectRow={handleSelectRow}
-          onSelectAll={handleSelectAll}
           onDeleteSelected={handleDeleteSelected}
           handleSort={handleSort}
           sort={activeSort}

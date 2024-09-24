@@ -10,29 +10,19 @@ import {
   Paper,
   Checkbox,
   Button,
-  TableFooter,
   Link,
 } from "@mui/material";
 import { DataItem, SortableColumn } from "../filters/filterOptions";
 
 interface JsonTableProps {
   tableData: DataItem[];
-  selectedRows: string[];
-  onSelectRow: (name: string) => void;
-  onSelectAll: (select: boolean) => void;
-  onDeleteSelected: () => void;
+  onDeleteSelected: (rowName: string) => void;
   handleSort: (column: SortableColumn) => void;
-  sort: {
-    column: SortableColumn;
-    order: "asc" | "desc";
-  };
+  sort: { column: SortableColumn; order: "asc" | "desc" };
 }
 
 const JsonTable: React.FC<JsonTableProps> = ({
   tableData,
-  selectedRows,
-  onSelectRow,
-  onSelectAll,
   onDeleteSelected,
   handleSort,
   sort,
@@ -45,12 +35,6 @@ const JsonTable: React.FC<JsonTableProps> = ({
       <Table size="small" stickyHeader>
         <TableHead>
           <TableRow>
-            <TableCell>
-              <Checkbox
-                checked={selectedRows.length === tableData.length}
-                onChange={(event) => onSelectAll(event.target.checked)}
-              />
-            </TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Website</TableCell>
             <TableCell>LI</TableCell>
@@ -74,20 +58,12 @@ const JsonTable: React.FC<JsonTableProps> = ({
                 (sort.order === "asc" ? "▲" : "▼")}
             </TableCell>
             <TableCell>Revenue Range</TableCell>
+            <TableCell>Actions</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {tableData.map((item) => (
-            <TableRow
-              key={item.name}
-              selected={selectedRows.includes(item.name)}
-            >
-              <TableCell padding="checkbox">
-                <Checkbox
-                  checked={selectedRows.includes(item.name)}
-                  onChange={() => onSelectRow(item.name)}
-                />
-              </TableCell>
+            <TableRow key={item.name}>
               <TableCell>
                 <Link
                   href={item.companyCBUrl}
@@ -121,23 +97,21 @@ const JsonTable: React.FC<JsonTableProps> = ({
               <TableCell>{item.locationIdentifiers.join(", ")}</TableCell>
               <TableCell>{item.rankOrgCompany}</TableCell>
               <TableCell>{item.revenueRange}</TableCell>
+              <TableCell>
+                <Button
+                  size="small"
+                  style={{ backgroundColor: "red", color: "white" }}
+                  onClick={() => {
+                    console.log("delete", item.name);
+                    onDeleteSelected(item.name);
+                  }}
+                >
+                  x
+                </Button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
-        <TableFooter sx={{ position: "sticky", bottom: 0 }}>
-          <TableRow>
-            <TableCell colSpan={10}>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={onDeleteSelected}
-                disabled={selectedRows.length === 0}
-              >
-                Delete
-              </Button>
-            </TableCell>
-          </TableRow>
-        </TableFooter>
       </Table>
     </TableContainer>
   );
