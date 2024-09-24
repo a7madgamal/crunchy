@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Container } from "@mui/material";
-
 import { FilterInput } from "./components/FilterInput";
 import { JsonTable } from "./components/JsonTable";
 import { FileActions } from "./components/FileActions";
@@ -17,6 +16,7 @@ export const App: React.FC = () => {
   } = useFilter();
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
   const [locationFilter, setLocationFilter] = useState<string[]>([]);
+  const [categoryGroups, setCategoryGroups] = useState<string[]>([]);
 
   const handleSelectRow = (rowIndex: number) => {
     setSelectedRows((prev) => {
@@ -48,11 +48,13 @@ export const App: React.FC = () => {
         setOriginalData={setOriginalData}
         filteredData={sortedData}
         setLocationFilter={setLocationFilter}
+        setCategoryGroups={setCategoryGroups}
         updateFilters={updateFilters}
       />
       <FilterInput
         updateFilters={updateFilters}
         locationFilter={locationFilter}
+        categoryGroups={categoryGroups}
       />
       <JsonTable
         tableData={sortedData}

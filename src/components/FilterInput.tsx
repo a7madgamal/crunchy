@@ -9,11 +9,7 @@ import {
   InputLabel,
   FormControl,
 } from "@mui/material";
-import {
-  CATEGORY_GROUPS_FILTER,
-  NUM_EMPLOYEES,
-  REV_OPTIONS,
-} from "../filters/filterOptions";
+import { NUM_EMPLOYEES, REV_OPTIONS } from "../filters/filterOptions";
 
 interface FilterInputProps {
   updateFilters: (
@@ -25,11 +21,13 @@ interface FilterInputProps {
     revenueRangeFilter: string[]
   ) => void;
   locationFilter: string[];
+  categoryGroups: string[];
 }
 
 export const FilterInput: FC<FilterInputProps> = ({
   updateFilters,
   locationFilter,
+  categoryGroups,
 }) => {
   const { control, watch } = useForm<{
     name: string;
@@ -120,7 +118,7 @@ export const FilterInput: FC<FilterInputProps> = ({
               multiple
               renderValue={(selected) => selected.join(", ")}
             >
-              {CATEGORY_GROUPS_FILTER.map((option) => (
+              {categoryGroups.map((option) => (
                 <MenuItem key={option} value={option}>
                   <Checkbox checked={field.value.includes(option)} />
                   <ListItemText primary={option} />

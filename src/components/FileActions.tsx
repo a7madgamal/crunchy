@@ -5,6 +5,7 @@ interface FileActionsProps {
   setOriginalData: React.Dispatch<React.SetStateAction<DataItem[]>>;
   filteredData: DataItem[];
   setLocationFilter: React.Dispatch<React.SetStateAction<string[]>>;
+  setCategoryGroups: React.Dispatch<React.SetStateAction<string[]>>;
   updateFilters: (
     nameFilter: string,
     numEmployeesFilter: string[],
@@ -19,6 +20,7 @@ export const FileActions: React.FC<FileActionsProps> = ({
   setOriginalData,
   filteredData,
   setLocationFilter,
+  setCategoryGroups,
   updateFilters,
 }) => {
   const handleLoadFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,14 +30,19 @@ export const FileActions: React.FC<FileActionsProps> = ({
       const jsonData = JSON.parse(text);
 
       const uniqueLocations = new Set<string>();
+      const uniqueCategories = new Set<string>();
 
       jsonData.forEach((item: DataItem) => {
         item.locationIdentifiers.forEach((location: string) => {
           uniqueLocations.add(location);
         });
+        item.categoryGroups.forEach((category: string) => {
+          uniqueCategories.add(category);
+        });
       });
 
       setLocationFilter(Array.from(uniqueLocations).sort());
+      setCategoryGroups(Array.from(uniqueCategories).sort());
       setOriginalData(jsonData);
 
       updateFilters("", [], [], [], null, []);
