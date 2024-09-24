@@ -72,16 +72,20 @@ export const useFilter = () => {
       sorted.sort((a, b) => {
         const aIndex = NUM_EMPLOYEES.indexOf(a.numEmployeesEnum);
         const bIndex = NUM_EMPLOYEES.indexOf(b.numEmployeesEnum);
+
         if (aIndex === -1) return 1; // a is empty, put it at the end
         if (bIndex === -1) return -1; // b is empty, put it at the end
+
         return activeSort.order === "asc" ? aIndex - bIndex : bIndex - aIndex;
       });
     } else {
       sorted.sort((a, b) => {
-        const aValue = a[activeSort.column];
-        const bValue = b[activeSort.column];
+        const aValue = parseInt(a[activeSort.column] as string);
+        const bValue = parseInt(b[activeSort.column] as string);
+
         if (aValue < bValue) return activeSort.order === "asc" ? -1 : 1;
         if (aValue > bValue) return activeSort.order === "asc" ? 1 : -1;
+
         return 0;
       });
     }
