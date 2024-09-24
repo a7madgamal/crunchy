@@ -1,3 +1,4 @@
+// src/components/JsonTable.tsx
 import React from "react";
 import {
   Table,
@@ -16,8 +17,8 @@ import { DataItem, SortableColumn } from "../filters/filterOptions";
 
 interface JsonTableProps {
   tableData: DataItem[];
-  selectedRows: number[];
-  onSelectRow: (rowIndex: number) => void;
+  selectedRows: string[];
+  onSelectRow: (name: string) => void;
   onSelectAll: (select: boolean) => void;
   onDeleteSelected: () => void;
   handleSort: (column: SortableColumn) => void;
@@ -76,12 +77,15 @@ const JsonTable: React.FC<JsonTableProps> = ({
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableData.map((item, index) => (
-            <TableRow key={index}>
-              <TableCell>
+          {tableData.map((item) => (
+            <TableRow
+              key={item.name}
+              selected={selectedRows.includes(item.name)}
+            >
+              <TableCell padding="checkbox">
                 <Checkbox
-                  checked={selectedRows.includes(index)}
-                  onChange={() => onSelectRow(index)}
+                  checked={selectedRows.includes(item.name)}
+                  onChange={() => onSelectRow(item.name)}
                 />
               </TableCell>
               <TableCell>

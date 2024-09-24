@@ -23,21 +23,21 @@ export const App: React.FC = () => {
     handleSort,
     activeSort,
   } = useFilter();
-  const [selectedRows, setSelectedRows] = useState<number[]>([]);
+  const [selectedRows, setSelectedRows] = useState<string[]>([]);
   const [locationFilter, setLocationFilter] = useState<string[]>([]);
   const [categoryGroups, setCategoryGroups] = useState<string[]>([]);
 
-  const handleSelectRow = (rowIndex: number) => {
+  const handleSelectRow = (rowName: string) => {
     setSelectedRows((prev) => {
-      return prev.includes(rowIndex)
-        ? prev.filter((index) => index !== rowIndex)
-        : [...prev, rowIndex];
+      return prev.includes(rowName)
+        ? prev.filter((name) => name !== rowName)
+        : [...prev, rowName];
     });
   };
 
   const handleSelectAll = (select: boolean) => {
     if (select) {
-      setSelectedRows(sortedData.map((_, index) => index));
+      setSelectedRows(sortedData.map((item) => item.name));
     } else {
       setSelectedRows([]);
     }
@@ -45,7 +45,7 @@ export const App: React.FC = () => {
 
   const handleDeleteSelected = () => {
     setOriginalData((prev) =>
-      prev.filter((_, index) => !selectedRows.includes(index))
+      prev.filter((item) => !selectedRows.includes(item.name))
     );
     setSelectedRows([]);
   };
