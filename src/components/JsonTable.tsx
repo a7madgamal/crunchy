@@ -8,9 +8,9 @@ import {
   TableRow,
   Paper,
   Checkbox,
+  Button,
   TableFooter,
   Link,
-  Tooltip,
 } from "@mui/material";
 import { DataItem, SortableColumn } from "../filters/filterOptions";
 
@@ -39,9 +39,9 @@ const JsonTable: React.FC<JsonTableProps> = ({
   return (
     <TableContainer
       component={Paper}
-      sx={{ maxWidth: "100%", width: "1400px" }}
+      sx={{ maxWidth: "100%", width: "1400px", maxHeight: "80vh" }}
     >
-      <Table>
+      <Table size="small" stickyHeader>
         <TableHead>
           <TableRow>
             <TableCell>
@@ -111,17 +111,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
                   LI
                 </Link>
               </TableCell>
-              <TableCell>
-                <Tooltip title={item.shortDescription} arrow>
-                  <div
-                    style={{
-                      maxWidth: "400px",
-                    }}
-                  >
-                    {item.shortDescription}
-                  </div>
-                </Tooltip>
-              </TableCell>
+              <TableCell>{item.shortDescription}</TableCell>
               <TableCell>{item.numEmployeesEnum}</TableCell>
               <TableCell>{item.categoryGroups.join(", ")}</TableCell>
               <TableCell>{item.locationIdentifiers.join(", ")}</TableCell>
@@ -130,10 +120,17 @@ const JsonTable: React.FC<JsonTableProps> = ({
             </TableRow>
           ))}
         </TableBody>
-        <TableFooter>
+        <TableFooter sx={{ position: "sticky", bottom: 0 }}>
           <TableRow>
             <TableCell colSpan={10}>
-              <button onClick={onDeleteSelected}>Delete Selected</button>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={onDeleteSelected}
+                disabled={selectedRows.length === 0}
+              >
+                Delete
+              </Button>
             </TableCell>
           </TableRow>
         </TableFooter>

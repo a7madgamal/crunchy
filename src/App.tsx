@@ -5,12 +5,21 @@ import { JsonTable } from "./components/JsonTable";
 import { FileActions } from "./components/FileActions";
 import { useFilter } from "./hooks/useFilter";
 
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
+
 export const App: React.FC = () => {
   const {
     setOriginalData,
     sortedData,
     updateFilters,
-    setFilteredData,
+    // setFilteredData,
     handleSort,
     activeSort,
   } = useFilter();
@@ -35,36 +44,39 @@ export const App: React.FC = () => {
   };
 
   const handleDeleteSelected = () => {
-    setFilteredData((prev) =>
+    setOriginalData((prev) =>
       prev.filter((_, index) => !selectedRows.includes(index))
     );
     setSelectedRows([]);
   };
 
   return (
-    <Container maxWidth="xl">
-      <h1>JSON File Table with Filters</h1>
-      <FileActions
-        setOriginalData={setOriginalData}
-        filteredData={sortedData}
-        setLocationFilter={setLocationFilter}
-        setCategoryGroups={setCategoryGroups}
-        updateFilters={updateFilters}
-      />
-      <FilterInput
-        updateFilters={updateFilters}
-        locationFilter={locationFilter}
-        categoryGroups={categoryGroups}
-      />
-      <JsonTable
-        tableData={sortedData}
-        selectedRows={selectedRows}
-        onSelectRow={handleSelectRow}
-        onSelectAll={handleSelectAll}
-        onDeleteSelected={handleDeleteSelected}
-        handleSort={handleSort}
-        sort={activeSort}
-      />
-    </Container>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Container maxWidth="xl">
+        <h1>JSON File Table with Filters</h1>
+        <FileActions
+          setOriginalData={setOriginalData}
+          filteredData={sortedData}
+          setLocationFilter={setLocationFilter}
+          setCategoryGroups={setCategoryGroups}
+          updateFilters={updateFilters}
+        />
+        <FilterInput
+          updateFilters={updateFilters}
+          locationFilter={locationFilter}
+          categoryGroups={categoryGroups}
+        />
+        <JsonTable
+          tableData={sortedData}
+          selectedRows={selectedRows}
+          onSelectRow={handleSelectRow}
+          onSelectAll={handleSelectAll}
+          onDeleteSelected={handleDeleteSelected}
+          handleSort={handleSort}
+          sort={activeSort}
+        />
+      </Container>
+    </ThemeProvider>
   );
 };
