@@ -123,7 +123,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
                 </Tooltip>
               </TableCell>
               <TableCell>{item.numEmployeesEnum}</TableCell>
-              <TableCell>{item.categories.join(", ")}</TableCell>
+              <TableCell>{item.categoryGroups.join(", ")}</TableCell>
               <TableCell>{item.locationIdentifiers.join(", ")}</TableCell>
               <TableCell>{item.rankOrgCompany}</TableCell>
               <TableCell>{item.revenueRange}</TableCell>

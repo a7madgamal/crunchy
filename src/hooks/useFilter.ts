@@ -36,7 +36,7 @@ export const useFilter = () => {
 
         const categoriesMatch =
           categoriesFilter.length === 0 ||
-          categoriesFilter.some((cat) => item.categories.includes(cat));
+          categoriesFilter.some((cat) => item.categoryGroups.includes(cat));
 
         const locationsMatch =
           locationFilter.length === 0 ||
