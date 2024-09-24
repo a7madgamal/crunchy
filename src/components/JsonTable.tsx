@@ -99,7 +99,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {item.website}
+                  website
                 </Link>
               </TableCell>
               <TableCell>
@@ -115,10 +115,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
                 <Tooltip title={item.shortDescription} arrow>
                   <div
                     style={{
-                      maxWidth: "200px",
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
+                      maxWidth: "400px",
                     }}
                   >
                     {item.shortDescription}
