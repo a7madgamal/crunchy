@@ -24,6 +24,12 @@ export const App: React.FC = () => {
     setOriginalData((prev) => prev.filter((item) => item.name !== name));
   };
 
+  const handleToggleChecked = (name: string, isChecked: boolean) => {
+    setOriginalData((prev) =>
+      prev.map((item) => (item.name === name ? { ...item, isChecked } : item))
+    );
+  };
+
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
@@ -46,6 +52,7 @@ export const App: React.FC = () => {
           onDeleteSelected={handleDeleteSelected}
           handleSort={handleSort}
           sort={activeSort}
+          onToggleChecked={handleToggleChecked}
         />
       </Container>
     </ThemeProvider>
