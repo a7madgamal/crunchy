@@ -11,8 +11,11 @@ import {
   Checkbox,
   Button,
   Link,
+  IconButton,
 } from "@mui/material";
 import { DataItem, SortableColumn } from "../filters/filterOptions";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LanguageIcon from "@mui/icons-material/Language";
 
 interface JsonTableProps {
   tableData: DataItem[];
@@ -40,8 +43,6 @@ const JsonTable: React.FC<JsonTableProps> = ({
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell>Website</TableCell>
-            <TableCell>LI</TableCell>
             <TableCell>Desc</TableCell>
             <TableCell
               onClick={() => handleSort("numEmployeesEnum")}
@@ -63,7 +64,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
             </TableCell>
             <TableCell>Revenue Range</TableCell>
             <TableCell>Checked</TableCell>
-            <TableCell>Fav</TableCell>
+            <TableCell>fav</TableCell>
             <TableCell>Actions</TableCell>
           </TableRow>
         </TableHead>
@@ -71,30 +72,28 @@ const JsonTable: React.FC<JsonTableProps> = ({
           {tableData.map((item) => (
             <TableRow key={item.name}>
               <TableCell>
+                <IconButton
+                  size="small"
+                  href={item.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedInIcon fontSize="small" />
+                </IconButton>
+                <IconButton
+                  size="small"
+                  href={item.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LanguageIcon fontSize="small" />
+                </IconButton>
                 <Link
                   href={item.companyCBUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {item.name}
-                </Link>
-              </TableCell>
-              <TableCell>
-                <Link
-                  href={item.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  url
-                </Link>
-              </TableCell>
-              <TableCell>
-                <Link
-                  href={item.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LI
                 </Link>
               </TableCell>
               <TableCell>{item.shortDescription}</TableCell>
