@@ -49,42 +49,6 @@
     "fundingTotal": "$17,000,000"
   },
   {
-    "name": "QNB Group",
-    "companyCBUrl": "https://www.crunchbase.com/organization/qnb-group",
-    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/qy6micix2k19haleukmz",
-    "shortDescription": "QNB Group is a government-owned commercial bank in Qatar.",
-    "description": "QNB Group) was established in 1964 as the country’s first Qatari-owned commercial bank, with an ownership structure split between the Qatar Investment Authority (50%) and (50%) held by members of the public. QNB Group has steadily grown to be the biggest bank in Qatar and the largest financial institution in the Middle East and Africa region. For the nine months ended 30 September 2017, the Group’s Net Profit reached QAR 10.3 billion, up by 6% from September 2016. Total assets increased to QAR 792 billion, up by 11%, the highest ever achieved by the group. This was driven by a growth rate of 14% in loans and advances to reach QAR 579 billion.In June 2016, QNB Group completed the acquisition of 99.88% stake in Turkey’s Finansbank A.Ş.(now known as QNB Finansbank), the 5th largest privately owned universal bank in Turkey by total assets, customer deposits and loans. QNB owns a 20.1% stake in Ecobank Transnational Incorporated (Ecobank), the leading pan-African bank. In 2013, the Group successfully completed the acquisition of a controlling stake of the second largest private bank in Egypt, QNB ALAHLI (QNBAA), amounting to 97.12%. The Group has also extended its regional reach by acquiring stakes in various financial institutions including a 35% stake in the Jordan-based, the Housing Bank for Trade and Finance (HBTF), 40% in Commercial Bank International (CBI) based in the United Arab Emirates (UAE), 99.96% of QNB Tunisia, 51% in the Iraqi-based Al-Mansour Investment Bank, 49% of the Libyan based Bank of Commerce & Development and 20% stake in Al Jazeera Finance Company in Doha. QNB Group also retains 51% stake in QNB-Syria, an 82.59% stake in QNB Indonesia. Since 2013, QNB has been ranked as one of the world’s strongest banks by Bloomberg Markets and has consistently been rated as one of the safest banks in the emerging markets, according to the Global Finance Magazine.",
-    "numEmployeesEnum": "10001+",
-    "categories": [
-      "Banking",
-      "Finance",
-      "Financial Services",
-      "FinTech",
-      "Government"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "5633",
-    "linkedin": "https://www.linkedin.com/company/qatar-national-bank-group/",
-    "website": "http://qnb.com/",
-    "revenueRange": "$10B+",
-    "foundedOn": "1964",
-    "companyType": "For Profit",
-    "contactEmail": "info@qnbcapital.com",
-    "phoneNumber": "+974 4497 5111",
-    "categoryGroups": [
-      "Financial Services",
-      "Government and Military",
-      "Lending and Investments"
-    ],
-    "founderIdentifiers": [],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": "$6,500,000,000"
-  },
-  {
     "name": "Estithmar Holding",
     "companyCBUrl": "https://www.crunchbase.com/organization/estithmar-holding",
     "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/l0jtpqsv3uhhfih0kpn8",
@@ -122,125 +86,6 @@
     ],
     "acquirerIdentifier": [],
     "fundingTotal": "QAR500,000,000"
-  },
-  {
-    "name": "Qatar Islamic Bank",
-    "companyCBUrl": "https://www.crunchbase.com/organization/qatar-islamic-bank",
-    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/rtenz00pztddib5y33zy",
-    "shortDescription": "Qatar Islamic Bank is an Islamic financial institution that operates under the supervision of the Shari'a board.",
-    "description": "Qatar Islamic Bank is an Islamic financial institution that operates under the supervision of the Shari'a board.",
-    "numEmployeesEnum": "1001-5000",
-    "categories": [
-      "Banking",
-      "Financial Services"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "9518",
-    "linkedin": "https://www.linkedin.com/company/qib/",
-    "website": "https://www.qib.com.qa/",
-    "revenueRange": "",
-    "foundedOn": "1982",
-    "companyType": "For Profit",
-    "contactEmail": "info@qib.com.qa",
-    "phoneNumber": "(+974)- 440 20888",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments"
-    ],
-    "founderIdentifiers": [],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": "$750,000,000"
-  },
-  {
-    "name": "Doha Bank",
-    "companyCBUrl": "https://www.crunchbase.com/organization/doha-bank",
-    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/v1475476073/eyiigqfyt69wiracpd9z.png",
-    "shortDescription": "Doha Bank is one of the largest commercial banks in the State of Qatar.",
-    "description": "Doha Bank provides domestic and international banking services for individuals, commercial, corporate and institutional clients through four business groups – Wholesale Banking, Retail Banking, International Banking and Treasury & Investments. Doha Bank has established overseas branches in Kuwait, Dubai (UAE), Abu Dhabi (UAE), Mumbai and Kochi (India) as well as representative offices in Japan, China, Singapore, Hong Kong, South Africa, South Korea, Australia, Turkey, the United Kingdom, Canada, Germany, Bangladesh and Sharjah (UAE).",
-    "numEmployeesEnum": "501-1000",
-    "categories": [
-      "Banking",
-      "Financial Services"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "19847",
-    "linkedin": "https://www.linkedin.com/company/doha-bank",
-    "website": "http://www.dohabank.com.qa/",
-    "revenueRange": "$100M to $500M",
-    "foundedOn": "1978",
-    "companyType": "For Profit",
-    "contactEmail": "hellodoha@dohabank.com.qa",
-    "phoneNumber": "+974 4445 6000",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments"
-    ],
-    "founderIdentifiers": [
-      {
-        "name": "Seetharaman Rahavan",
-        "link": "https://www.crunchbase.com/person/seetharaman-rahavan"
-      }
-    ],
-    "investorIdentifiers": [
-      {
-        "name": "Intesa Sanpaolo",
-        "link": "https://www.crunchbase.com/organization/intesa-sanpaolo"
-      },
-      {
-        "name": "Mizuho Financial Group",
-        "link": "https://www.crunchbase.com/organization/mizuho-financial-group"
-      },
-      {
-        "name": "MAPE Advisory Group",
-        "link": "https://www.crunchbase.com/organization/mape-advisory-group"
-      }
-    ],
-    "acquirerIdentifier": [],
-    "fundingTotal": "$1,267,500,000"
-  },
-  {
-    "name": "Commercial Bank Of Qatar",
-    "companyCBUrl": "https://www.crunchbase.com/organization/commercial-bank-of-qatar",
-    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/v1484137872/dcj2x6lg0c2yubp225yt.jpg",
-    "shortDescription": "Commercial Bank Of Qatar engages in conventional banking, brokerage services, and credit card businesses.",
-    "description": "Commercial Bank Of Qatar engages in conventional banking, brokerage services, and credit card businesses in Qatar and internationally. The company operates through four segments: Wholesale Banking, Retail Banking, Alternatifbank A.S., and Other Subsidiaries. It offers personal banking products and services, including current, savings, time deposit, and call accounts; credit and debit cards; personal, vehicle, and mortgage loans; life, home, vehicle, and travel insurance; and private banking services that include wealth management, investment products, and brokerage services.",
-    "numEmployeesEnum": "1001-5000",
-    "categories": [
-      "Banking",
-      "Financial Services"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "31446",
-    "linkedin": "https://www.linkedin.com/company/cbqat",
-    "website": "http://www.cbq.qa/",
-    "revenueRange": "",
-    "foundedOn": "1975",
-    "companyType": "For Profit",
-    "contactEmail": "",
-    "phoneNumber": "+974 4449 0000",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments"
-    ],
-    "founderIdentifiers": [
-      {
-        "name": "Hussain Alfardan",
-        "link": "https://www.crunchbase.com/person/hussain-alfardan"
-      }
-    ],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": "$500,000,000"
   },
   {
     "name": "Eiosoft Technologies",
@@ -1538,83 +1383,6 @@
     "fundingTotal": ""
   },
   {
-    "name": "Masraf Al Rayan",
-    "companyCBUrl": "https://www.crunchbase.com/organization/masraf-al-rayan",
-    "image": "",
-    "shortDescription": "Masraf Al Rayan focuses in supervising, protecting, and growing the assets of customers and shareholders.",
-    "description": "Masraf Al Rayan focuses on supervising, protecting, and growing the assets of customers and shareholders. The company aims to develop a stimulating and rewarding environment, with ongoing opportunities for growth and development. The company also harnesses resources for the good of local and regional development, and it seeks to create bridges between the region and the world. The company sets the standard of performance and service within Islamic banking and beyond. Masraf Al Rayan was founded in 2004 in Doha, Ad Dawhah, Qatar.",
-    "numEmployeesEnum": "251-500",
-    "categories": [
-      "Asset Management",
-      "Banking",
-      "Commercial",
-      "Financial Services",
-      "Wealth Management"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "173324",
-    "linkedin": "",
-    "website": "https://www.alrayan.com/",
-    "revenueRange": "$500M to $1B",
-    "foundedOn": "2004",
-    "companyType": "For Profit",
-    "contactEmail": "",
-    "phoneNumber": "974 4425 3333",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments",
-      "Other"
-    ],
-    "founderIdentifiers": [],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": ""
-  },
-  {
-    "name": "Qatar Development Bank",
-    "companyCBUrl": "https://www.crunchbase.com/organization/qatar-development-bank",
-    "image": "",
-    "shortDescription": "Qatar Development Bank is a Banking and Financial Sector.",
-    "description": "Qatar Development Bank they improve the economic development cycle by providing entrepreneurs and SMEs with a wide range of financial and advisory products under one roof.",
-    "numEmployeesEnum": "251-500",
-    "categories": [
-      "Banking",
-      "Consulting",
-      "Consumer Lending",
-      "Finance",
-      "Financial Services"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "174819",
-    "linkedin": "https://www.linkedin.com/company/qatar-development-bank",
-    "website": "http://www.qdb.qa/",
-    "revenueRange": "$100M to $500M",
-    "foundedOn": "1997",
-    "companyType": "For Profit",
-    "contactEmail": "info@qdb.qa",
-    "phoneNumber": "+974 44596666",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments",
-      "Professional Services"
-    ],
-    "founderIdentifiers": [
-      {
-        "name": "Abdulaziz Bin Nasser Al-Khalifa",
-        "link": "https://www.crunchbase.com/person/abdulaziz-bin-nasser-al-khalifa-ea99"
-      }
-    ],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": ""
-  },
-  {
     "name": "Be My Sense",
     "companyCBUrl": "https://www.crunchbase.com/organization/be-my-sense",
     "image": "",
@@ -2129,38 +1897,6 @@
     ],
     "acquirerIdentifier": [],
     "fundingTotal": "$961,274"
-  },
-  {
-    "name": "QATAR Central Bank",
-    "companyCBUrl": "https://www.crunchbase.com/organization/qatar-central-bank",
-    "image": "",
-    "shortDescription": "QATAR Central Bank is a provider of personal and business banking services to the customers.",
-    "description": "",
-    "numEmployeesEnum": "51-100",
-    "categories": [
-      "Banking",
-      "Financial Services"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "195865",
-    "linkedin": "",
-    "website": "https://www.qcb.gov.qa/en/Pages/default.aspx",
-    "revenueRange": "$10M to $50M",
-    "foundedOn": "Aug 1993",
-    "companyType": "For Profit",
-    "contactEmail": "",
-    "phoneNumber": "",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments"
-    ],
-    "founderIdentifiers": [],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": ""
   },
   {
     "name": "Alfardan Group",
@@ -2696,48 +2432,6 @@
     "fundingTotal": "$220,000"
   },
   {
-    "name": "Al Khalij Commercial Bank",
-    "companyCBUrl": "https://www.crunchbase.com/organization/al-khalij",
-    "image": "",
-    "shortDescription": "Al Khaliji is a commercial bank engaged in providing banking products and services to its business, corporate, and international customers.",
-    "description": "Al Khaliji is a commercial bank engaged in providing banking products and services to its premium, business, corporate, and international customers. The company offers corporate lending, club and syndicated loans, structured financing, trade financing, cash management, and advisory services. It is the parent company of Al Khaliji France S.A., AKCB Finance Ltd, Al Khaliji Services Ltd, Qatar Capital Ltd., and AKCB Falcon Limited. It was established in 2007 in Doha, Ad Dawhah, Qatar.",
-    "numEmployeesEnum": "251-500",
-    "categories": [
-      "Banking",
-      "Commercial Lending",
-      "Consulting",
-      "Finance",
-      "Financial Services",
-      "Lending"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "232048",
-    "linkedin": "https://www.linkedin.com/company/alkhalijibank",
-    "website": "https://www.alkhaliji.com/",
-    "revenueRange": "",
-    "foundedOn": "2007",
-    "companyType": "For Profit",
-    "contactEmail": "wecare@alkhaliji.com",
-    "phoneNumber": "",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments",
-      "Professional Services"
-    ],
-    "founderIdentifiers": [],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [
-      {
-        "name": "Masraf Al Rayan",
-        "link": "https://www.crunchbase.com/organization/masraf-al-rayan"
-      }
-    ],
-    "fundingTotal": ""
-  },
-  {
     "name": "Ashghal",
     "companyCBUrl": "https://www.crunchbase.com/organization/ashghal",
     "image": "",
@@ -3167,41 +2861,6 @@
       "Content and Publishing",
       "Media and Entertainment",
       "Video"
-    ],
-    "founderIdentifiers": [],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": ""
-  },
-  {
-    "name": "Qatar International Islamic Bank",
-    "companyCBUrl": "https://www.crunchbase.com/organization/qatar-international-islamic-bank",
-    "image": "",
-    "shortDescription": "Qatar International Islamic Bank (Q.S.C) engages in banking, financing, and investing activities.",
-    "description": "Qatar International Islamic Bank (Q.S.C) engages in banking, financing, and investing activities. The company operates in three segments: Corporate, Retail, and Treasury & Investments. It offers current, saving, and time deposit accounts; personal, vehicle, and home finance; debit and credit cards; and mobile and Internet banking, phone banking, call center, ATM, safe deposit, and Islamic insurance products and services. The company also provides working capital, real estate, contracting, and project finance, as well as corporate finance and syndication services; and treasury and investment banking services, including equity participation, private equity, investment funds, Sukuk, and international finance and syndications. It serves corporate, government, and semi government institutional customers; and SME and retail customers.",
-    "numEmployeesEnum": "251-500",
-    "categories": [
-      "Banking",
-      "Finance",
-      "Financial Services",
-      "Payments"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "263412",
-    "linkedin": "https://www.linkedin.com/company/qatar-international-islamic-bank",
-    "website": "http://www.qiib.com.qa/",
-    "revenueRange": "$500M to $1B",
-    "foundedOn": "1990",
-    "companyType": "For Profit",
-    "contactEmail": "Info@qiib.com.qa",
-    "phoneNumber": "+974 4484 0000",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments",
-      "Payments"
     ],
     "founderIdentifiers": [],
     "investorIdentifiers": [],
@@ -3918,44 +3577,6 @@
     "fundingTotal": ""
   },
   {
-    "name": "CQUR Bank",
-    "companyCBUrl": "https://www.crunchbase.com/organization/cqur-bank",
-    "image": "",
-    "shortDescription": "CQUR Bank offers modern internet banking services, focusing on efficiency and security.",
-    "description": "CQUR Bank specializes in providing a range of banking services with a focus on modern and secure internet banking solutions. It offers customers the ability to perform banking transactions efficiently through its CQUR Online Banking platform, which is designed to streamline the banking process into three simple steps. With a commitment to delivering effective banking solutions, CQUR Bank leverages its expertise in the banking industry to meet the needs of its customers. The bank holds a banking license from the Qatar Financial Centre Regulatory Authority, indicating its compliance with regulatory standards and its dedication to maintaining a secure banking environment.",
-    "numEmployeesEnum": "11-50",
-    "categories": [
-      "Banking",
-      "Finance",
-      "Financial Services"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "307713",
-    "linkedin": "https://www.linkedin.com/company/cqur-bank-llc",
-    "website": "https://www.cqurbank.com/",
-    "revenueRange": "$1M to $10M",
-    "foundedOn": "2019",
-    "companyType": "For Profit",
-    "contactEmail": "info@cqurbank.com",
-    "phoneNumber": "+974 4009 5100",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments"
-    ],
-    "founderIdentifiers": [
-      {
-        "name": "Ziad Al-Amin",
-        "link": "https://www.crunchbase.com/person/ziad-al-amin"
-      }
-    ],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": ""
-  },
-  {
     "name": "Meeza",
     "companyCBUrl": "https://www.crunchbase.com/organization/meeza",
     "image": "",
@@ -4077,39 +3698,6 @@
         "link": "https://www.crunchbase.com/organization/rubix-dad3"
       }
     ],
-    "acquirerIdentifier": [],
-    "fundingTotal": ""
-  },
-  {
-    "name": "Dukhan Bank",
-    "companyCBUrl": "https://www.crunchbase.com/organization/dukhan-bank",
-    "image": "",
-    "shortDescription": "Dukhan Bank is Qatar's retail Bank provides savings accounts, current bank accounts.",
-    "description": "Dukhan Bank is Qatar’s fastest growing Shari’ah-compliant banking service provider.Dukhan bank assumes the role of a strong and forward-looking financial institution fully prepared to serve the needs of Qatar's residents and future generations in line with the country's National Vision 2030.",
-    "numEmployeesEnum": "101-250",
-    "categories": [
-      "Banking",
-      "Finance",
-      "Financial Services"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "308422",
-    "linkedin": "https://www.linkedin.com/company/dukhan-bank/",
-    "website": "https://www.dukhanbank.com/",
-    "revenueRange": "$10M to $50M",
-    "foundedOn": "2015",
-    "companyType": "For Profit",
-    "contactEmail": "info@dukhanbank.com",
-    "phoneNumber": "+974 800 8555",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments"
-    ],
-    "founderIdentifiers": [],
-    "investorIdentifiers": [],
     "acquirerIdentifier": [],
     "fundingTotal": ""
   },
@@ -4751,42 +4339,6 @@
       "Other",
       "Real Estate",
       "Science and Engineering"
-    ],
-    "founderIdentifiers": [],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": ""
-  },
-  {
-    "name": "Commercial Bank Financial Services",
-    "companyCBUrl": "https://www.crunchbase.com/organization/commercial-bank-financial-services",
-    "image": "",
-    "shortDescription": "Commercial Bank Financial Services offers brokerage and stock trading services, regulated by QFMA.",
-    "description": "Commercial Bank Financial Services specializes in providing a range of financial services including brokerage solutions. As a licensed brokerage house in the State of Qatar, it operates under the regulation of the Qatar Financial Markets Authority (QFMA). The company offers clients the ability to trade stocks live on the Qatar Exchange, monitor stock performance, view orders, and access previous statements. Services are accessible through both a mobile trading application and in-person at the Commercial Bank branch or trading lounge. Commercial Bank Financial Services aims to enhance the trading experience with comprehensive support and technology.",
-    "numEmployeesEnum": "51-100",
-    "categories": [
-      "Finance",
-      "Financial Services",
-      "Market Research",
-      "Trading Platform"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "334986",
-    "linkedin": "",
-    "website": "https://www.cbfin.qa/",
-    "revenueRange": "$10M to $50M",
-    "foundedOn": "",
-    "companyType": "For Profit",
-    "contactEmail": "cbfscustomerservices@cbq.qa",
-    "phoneNumber": "974 4449 5522",
-    "categoryGroups": [
-      "Data and Analytics",
-      "Design",
-      "Financial Services",
-      "Lending and Investments"
     ],
     "founderIdentifiers": [],
     "investorIdentifiers": [],
@@ -6636,39 +6188,6 @@
     "fundingTotal": ""
   },
   {
-    "name": "Al Ahli Bank of Qatar",
-    "companyCBUrl": "https://www.crunchbase.com/organization/al-ahli-bank-of-qatar",
-    "image": "",
-    "shortDescription": "Ahli Bank is an financial services firm that offers services like corporate & retail banking, private banking, treasury and investments.",
-    "description": "Al Ahli Bank of Qatar is an financial services firm that offers a range of products and services like corporate & retail banking, private & international banking, treasury and investments.",
-    "numEmployeesEnum": "251-500",
-    "categories": [
-      "Banking",
-      "Finance",
-      "Financial Services"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "430320",
-    "linkedin": "https://www.linkedin.com/company/ahlibankqatar/about/",
-    "website": "http://www.ahlibank.com.qa/",
-    "revenueRange": "$1M to $10M",
-    "foundedOn": "1983",
-    "companyType": "For Profit",
-    "contactEmail": "",
-    "phoneNumber": "+974 4420 5222",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments"
-    ],
-    "founderIdentifiers": [],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": ""
-  },
-  {
     "name": "Aura",
     "companyCBUrl": "https://www.crunchbase.com/organization/aura-caeb",
     "image": "",
@@ -7701,41 +7220,6 @@
         "link": "https://www.crunchbase.com/person/h-e-sheikh-fasial-bin-qassim-al-thani"
       }
     ],
-    "investorIdentifiers": [],
-    "acquirerIdentifier": [],
-    "fundingTotal": ""
-  },
-  {
-    "name": "International Bank of Qatar",
-    "companyCBUrl": "https://www.crunchbase.com/organization/international-bank-of-qatar",
-    "image": "",
-    "shortDescription": "International Bank of Qatar provides fixed deposits, vehicle loans, credit cards, corporate banking, trade finance, and treasury services.",
-    "description": "",
-    "numEmployeesEnum": "251-500",
-    "categories": [
-      "Banking",
-      "Finance",
-      "Financial Services",
-      "Insurance",
-      "Personal Finance"
-    ],
-    "locationIdentifiers": [
-      "Doha",
-      "Qatar"
-    ],
-    "rankOrgCompany": "481913",
-    "linkedin": "https://www.linkedin.com/company/international-bank-of-qatar-ibq-/",
-    "website": "https://intlb-qa.com/en.html",
-    "revenueRange": "$1M to $10M",
-    "foundedOn": "Nov 1, 1956",
-    "companyType": "For Profit",
-    "contactEmail": "enquiries@ibq.com.qa",
-    "phoneNumber": "+974 4447 8000",
-    "categoryGroups": [
-      "Financial Services",
-      "Lending and Investments"
-    ],
-    "founderIdentifiers": [],
     "investorIdentifiers": [],
     "acquirerIdentifier": [],
     "fundingTotal": ""
