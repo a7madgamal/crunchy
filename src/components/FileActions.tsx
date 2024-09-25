@@ -13,7 +13,8 @@ interface FileActionsProps {
     categoryGroupsFilter: string[],
     locationFilter: string[],
     rankOrgCompanyFilter: number | null,
-    revenueRangeFilter: string[]
+    revenueRangeFilter: string[],
+    isCheckedFilter: string[]
   ) => void;
 }
 
@@ -61,7 +62,7 @@ export const FileActions: React.FC<FileActionsProps> = ({
       setCategoryGroups(Array.from(uniqueCategories).sort());
       setOriginalData(jsonData);
 
-      updateFilters("", [], [], [], null, []);
+      updateFilters("", [], [], [], null, [], []);
     } catch (err) {
       console.error("Failed to open the file:", err);
     }

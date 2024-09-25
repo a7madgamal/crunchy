@@ -66,6 +66,7 @@ export const REV_OPTIONS = [
   "$1M to $10M",
   "Less than $1M",
 ];
+export const IS_CHECKED_OPTIONS = ["true", "false"];
 
 export const NUM_EMPLOYEES = [
   "1-10",

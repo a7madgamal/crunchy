@@ -9,7 +9,11 @@ import {
   InputLabel,
   FormControl,
 } from "@mui/material";
-import { NUM_EMPLOYEES, REV_OPTIONS } from "../filters/filterOptions";
+import {
+  NUM_EMPLOYEES,
+  REV_OPTIONS,
+  IS_CHECKED_OPTIONS,
+} from "../filters/filterOptions";
 
 interface FilterInputProps {
   updateFilters: (
@@ -18,7 +22,8 @@ interface FilterInputProps {
     categoryGroupsFilter: string[],
     locationFilter: string[],
     rankOrgCompanyFilter: number | null,
-    revenueRangeFilter: string[]
+    revenueRangeFilter: string[],
+    isCheckedFilter: string[]
   ) => void;
   locationFilter: string[];
   categoryGroups: string[];
@@ -36,6 +41,7 @@ export const FilterInput: FC<FilterInputProps> = ({
     locationIdentifiers: string[];
     rankOrgCompany: number | "";
     revenueRange: string[];
+    isChecked: string[];
   }>({
     defaultValues: {
       name: "",
@@ -44,6 +50,7 @@ export const FilterInput: FC<FilterInputProps> = ({
       locationIdentifiers: [],
       rankOrgCompany: "",
       revenueRange: [],
+      isChecked: [],
     },
   });
 
@@ -53,6 +60,7 @@ export const FilterInput: FC<FilterInputProps> = ({
   const watchLocationIdentifiers = watch("locationIdentifiers");
   const watchRankOrgCompany = watch("rankOrgCompany");
   const watchRevenueRange = watch("revenueRange");
+  const watchIsChecked = watch("isChecked");
 
   useEffect(() => {
     const rankValue = watchRankOrgCompany ? Number(watchRankOrgCompany) : null;
@@ -63,7 +71,8 @@ export const FilterInput: FC<FilterInputProps> = ({
       watchCategoryGroups,
       watchLocationIdentifiers,
       rankValue,
-      watchRevenueRange
+      watchRevenueRange,
+      watchIsChecked
     );
   }, [
     watchName,
@@ -72,6 +81,7 @@ export const FilterInput: FC<FilterInputProps> = ({
     watchLocationIdentifiers,
     watchRankOrgCompany,
     watchRevenueRange,
+    watchIsChecked,
     // updateFilters,
   ]);
 
@@ -176,6 +186,28 @@ export const FilterInput: FC<FilterInputProps> = ({
               renderValue={(selected) => selected.join(", ")}
             >
               {REV_OPTIONS.map((option) => (
+                <MenuItem key={option} value={option}>
+                  <Checkbox checked={field.value.indexOf(option) > -1} />
+                  <ListItemText primary={option} />
+                </MenuItem>
+              ))}
+            </Select>
+          )}
+        />
+      </FormControl>
+
+      <FormControl style={{ minWidth: 200 }}>
+        <InputLabel>Checked</InputLabel>
+        <Controller
+          name="isChecked"
+          control={control}
+          render={({ field }) => (
+            <Select
+              {...field}
+              multiple
+              renderValue={(selected) => selected.join(", ")}
+            >
+              {IS_CHECKED_OPTIONS.map((option) => (
                 <MenuItem key={option} value={option}>
                   <Checkbox checked={field.value.indexOf(option) > -1} />
                   <ListItemText primary={option} />

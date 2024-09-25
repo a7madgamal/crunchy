@@ -23,6 +23,7 @@ export const useFilter = () => {
     locationFilter: string[];
     rankOrgCompanyFilter: number | null;
     revenueRangeFilter: string[];
+    isCheckedFilter: string[];
   }>({
     nameFilter: "",
     numEmployeesFilter: [],
@@ -30,6 +31,7 @@ export const useFilter = () => {
     locationFilter: [],
     rankOrgCompanyFilter: null,
     revenueRangeFilter: [],
+    isCheckedFilter: [],
   });
 
   const updateFilters = useCallback(
@@ -39,7 +41,8 @@ export const useFilter = () => {
       categoriesFilter: string[],
       locationFilter: string[],
       rankOrgCompanyFilter: number | null,
-      revenueRangeFilter: string[]
+      revenueRangeFilter: string[],
+      isCheckedFilter: string[]
     ) => {
       setCurrentFilters({
         nameFilter,
@@ -48,6 +51,7 @@ export const useFilter = () => {
         locationFilter,
         rankOrgCompanyFilter,
         revenueRangeFilter,
+        isCheckedFilter,
       });
 
       const filtered = originalData.filter((item) => {
@@ -75,13 +79,18 @@ export const useFilter = () => {
           revenueRangeFilter.length === 0 ||
           revenueRangeFilter.some((rev) => item.revenueRange.includes(rev));
 
+        const isCheckedMatches =
+          isCheckedFilter.length === 0 ||
+          isCheckedFilter.includes(item.isChecked.toString());
+
         return (
           nameMatches &&
           numEmployeesMatches &&
           categoriesMatch &&
           locationsMatch &&
           rankMatches &&
-          revenueMatches
+          revenueMatches &&
+          isCheckedMatches
         );
       });
 
@@ -132,7 +141,8 @@ export const useFilter = () => {
       currentFilters.categoriesFilter,
       currentFilters.locationFilter,
       currentFilters.rankOrgCompanyFilter,
-      currentFilters.revenueRangeFilter
+      currentFilters.revenueRangeFilter,
+      currentFilters.isCheckedFilter
     );
   }, [
     currentFilters.categoriesFilter,
@@ -141,6 +151,7 @@ export const useFilter = () => {
     currentFilters.numEmployeesFilter,
     currentFilters.rankOrgCompanyFilter,
     currentFilters.revenueRangeFilter,
+    currentFilters.isCheckedFilter,
     originalData,
     // updateFilters,
   ]);
