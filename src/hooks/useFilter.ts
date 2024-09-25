@@ -13,7 +13,7 @@ export const useFilter = () => {
     order: "asc" | "desc";
   }>({
     column: "rankOrgCompany",
-    order: "desc",
+    order: "asc",
   });
 
   const [currentFilters, setCurrentFilters] = useState<{
