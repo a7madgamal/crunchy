@@ -52,6 +52,8 @@ export interface DataItem {
   locationIdentifiers: string[];
   rankOrgCompany: number;
   revenueRange: string[];
+  isChecked: boolean;
+  isFav: boolean;
 }
 
 export const REV_OPTIONS = [
