@@ -30,6 +30,12 @@ export const App: React.FC = () => {
     );
   };
 
+  const handleToggleFav = (name: string, isFav: boolean) => {
+    setOriginalData((prev) =>
+      prev.map((item) => (item.name === name ? { ...item, isFav } : item))
+    );
+  };
+
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
@@ -53,6 +59,7 @@ export const App: React.FC = () => {
           handleSort={handleSort}
           sort={activeSort}
           onToggleChecked={handleToggleChecked}
+          onToggleFav={handleToggleFav}
         />
       </Container>
     </ThemeProvider>

@@ -20,6 +20,7 @@ interface JsonTableProps {
   handleSort: (column: SortableColumn) => void;
   sort: { column: SortableColumn; order: "asc" | "desc" };
   onToggleChecked: (name: string, isChecked: boolean) => void;
+  onToggleFav: (name: string, isFav: boolean) => void;
 }
 
 const JsonTable: React.FC<JsonTableProps> = ({
@@ -28,6 +29,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
   handleSort,
   sort,
   onToggleChecked,
+  onToggleFav,
 }) => {
   return (
     <TableContainer
@@ -60,7 +62,8 @@ const JsonTable: React.FC<JsonTableProps> = ({
                 (sort.order === "asc" ? "▲" : "▼")}
             </TableCell>
             <TableCell>Revenue Range</TableCell>
-            <TableCell>checked</TableCell>
+            <TableCell>Checked</TableCell>
+            <TableCell>Fav</TableCell>
             <TableCell>Actions</TableCell>
           </TableRow>
         </TableHead>
@@ -82,7 +85,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  website
+                  url
                 </Link>
               </TableCell>
               <TableCell>
@@ -107,12 +110,13 @@ const JsonTable: React.FC<JsonTableProps> = ({
                 />
               </TableCell>
               <TableCell>
-                <Button
-                  onClick={() => onDeleteSelected(item.name)}
-                  size="small"
-                >
-                  x
-                </Button>
+                <Checkbox
+                  checked={item.isFav}
+                  onChange={(e) => onToggleFav(item.name, e.target.checked)}
+                />
+              </TableCell>
+              <TableCell>
+                <Button onClick={() => onDeleteSelected(item.name)}>x</Button>
               </TableCell>
             </TableRow>
           ))}

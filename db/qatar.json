@@ -88,7 +88,7 @@
     ],
     "acquirerIdentifier": [],
     "fundingTotal": "QAR500,000,000",
-    "isFav": false,
+    "isFav": true,
     "isChecked": false
   },
   {
