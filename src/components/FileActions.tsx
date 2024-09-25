@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { DataItem } from "../filters/filterOptions";
+import { Button } from "@mui/material";
 
 interface FileActionsProps {
   setOriginalData: React.Dispatch<React.SetStateAction<DataItem[]>>;
@@ -23,9 +24,24 @@ export const FileActions: React.FC<FileActionsProps> = ({
   setCategoryGroups,
   updateFilters,
 }) => {
-  const handleLoadFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
+  const [fileHandle, setFileHandle] = useState<FileSystemFileHandle | null>(
+    null
+  );
+
+  const handleLoadFile = async () => {
+    try {
+      // @ts-expect-error
+      const [handle] = await window.showOpenFilePicker({
+        types: [
+          {
+            description: "JSON Files",
+            accept: { "application/json": [".json"] },
+          },
+        ],
+      });
+      setFileHandle(handle);
+
+      const file = await handle.getFile();
       const text = await file.text();
       const jsonData = JSON.parse(text);
 
@@ -46,25 +62,35 @@ export const FileActions: React.FC<FileActionsProps> = ({
       setOriginalData(jsonData);
 
       updateFilters("", [], [], [], null, []);
+    } catch (err) {
+      console.error("Failed to open the file:", err);
     }
   };
 
-  const handleSaveFile = () => {
-    const blob = new Blob([JSON.stringify(filteredData, null, 2)], {
-      type: "application/json",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "data.json";
-    a.click();
-    URL.revokeObjectURL(url);
+  const handleSaveFile = async () => {
+    if (fileHandle) {
+      const jsonString = JSON.stringify(filteredData, null, 2);
+      const blob = new Blob([jsonString], { type: "application/json" });
+
+      try {
+        const writable = await fileHandle.createWritable();
+        await writable.write(blob);
+        await writable.close();
+        console.log("File saved successfully");
+      } catch (err) {
+        console.error("Failed to save the file:", err);
+      }
+    } else {
+      console.error("No file selected");
+    }
   };
 
   return (
     <div>
-      <input type="file" accept=".json" onChange={handleLoadFile} />
-      <button onClick={handleSaveFile}>Save as JSON</button>
+      <Button onClick={handleLoadFile}>Load File</Button>
+      <Button onClick={handleSaveFile} disabled={!fileHandle}>
+        Save
+      </Button>
     </div>
   );
 };
