@@ -39,7 +39,7 @@ export const App: React.FC = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Container maxWidth="xl">
+      <Container maxWidth={false}>
         <h1>JSON File Table with Filters</h1>
         <FileActions
           setOriginalData={setOriginalData}

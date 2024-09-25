@@ -37,7 +37,7 @@ const JsonTable: React.FC<JsonTableProps> = ({
   return (
     <TableContainer
       component={Paper}
-      sx={{ maxWidth: "100%", width: "1400px", maxHeight: "80vh" }}
+      sx={{ maxWidth: "100%", width: "100vw", maxHeight: "80vh" }}
     >
       <Table size="small" stickyHeader>
         <TableHead>
@@ -65,13 +65,19 @@ const JsonTable: React.FC<JsonTableProps> = ({
             <TableCell>Revenue Range</TableCell>
             <TableCell>Checked</TableCell>
             <TableCell>fav</TableCell>
-            <TableCell>Actions</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {tableData.map((item) => (
             <TableRow key={item.name}>
               <TableCell>
+                <Button
+                  onClick={() => onDeleteSelected(item.name)}
+                  size="small"
+                  sx={{ width: "10px", minWidth: "10px", color: "red" }}
+                >
+                  x
+                </Button>
                 <IconButton
                   size="small"
                   href={item.linkedin}
@@ -113,9 +119,6 @@ const JsonTable: React.FC<JsonTableProps> = ({
                   checked={item.isFav}
                   onChange={(e) => onToggleFav(item.name, e.target.checked)}
                 />
-              </TableCell>
-              <TableCell>
-                <Button onClick={() => onDeleteSelected(item.name)}>x</Button>
               </TableCell>
             </TableRow>
           ))}
