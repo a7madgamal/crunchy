@@ -6,7 +6,10 @@ interface FileActionsProps {
   setOriginalData: React.Dispatch<React.SetStateAction<DataItem[]>>;
   filteredData: DataItem[];
   setLocationFilter: React.Dispatch<React.SetStateAction<string[]>>;
-  setCategoryGroups: React.Dispatch<React.SetStateAction<string[]>>;
+  setCategoryGroupsFilter: React.Dispatch<React.SetStateAction<string[]>>;
+  setNumEmployeesFilter: React.Dispatch<React.SetStateAction<string[]>>;
+  setRevenueRangeFilter: React.Dispatch<React.SetStateAction<string[]>>;
+
   updateFilters: (
     nameFilter: string,
     numEmployeesFilter: string[],
@@ -22,7 +25,9 @@ export const FileActions: React.FC<FileActionsProps> = ({
   setOriginalData,
   filteredData,
   setLocationFilter,
-  setCategoryGroups,
+  setCategoryGroupsFilter,
+  setNumEmployeesFilter,
+  setRevenueRangeFilter,
   updateFilters,
 }) => {
   const [fileHandle, setFileHandle] = useState<FileSystemFileHandle | null>(
@@ -47,19 +52,25 @@ export const FileActions: React.FC<FileActionsProps> = ({
       const jsonData = JSON.parse(text);
 
       const uniqueLocations = new Set<string>();
-      const uniqueCategories = new Set<string>();
+      const uniqueCategoryGroups = new Set<string>();
+      const uniqueNumEmployees = new Set<string>();
+      const uniqueRevenuRanges = new Set<string>();
 
       jsonData.forEach((item: DataItem) => {
         item.locationIdentifiers.forEach((location: string) => {
           uniqueLocations.add(location);
         });
         item.categoryGroups.forEach((category: string) => {
-          uniqueCategories.add(category);
+          uniqueCategoryGroups.add(category);
         });
+
+        uniqueNumEmployees.add(item.numEmployeesEnum);
       });
 
       setLocationFilter(Array.from(uniqueLocations).sort());
-      setCategoryGroups(Array.from(uniqueCategories).sort());
+      setCategoryGroupsFilter(Array.from(uniqueCategoryGroups).sort());
+      setNumEmployeesFilter(Array.from(uniqueNumEmployees).sort());
+      setRevenueRangeFilter(Array.from(uniqueRevenuRanges).sort());
       setOriginalData(jsonData);
 
       updateFilters("", [], [], [], null, [], []);

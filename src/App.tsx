@@ -18,7 +18,12 @@ export const App: React.FC = () => {
   const { setOriginalData, sortedData, updateFilters, handleSort, activeSort } =
     useFilter();
   const [locationFilter, setLocationFilter] = useState<string[]>([]);
-  const [categoryGroups, setCategoryGroups] = useState<string[]>([]);
+  const [categoryGroupsFilter, setCategoryGroupsFilter] = useState<string[]>(
+    []
+  );
+
+  const [numEmployeesFilter, setNumEmployeesFilter] = useState<string[]>([]);
+  const [revenueRangeFilter, setRevenueRangeFilter] = useState<string[]>([]);
 
   const handleDeleteSelected = (name: string) => {
     setOriginalData((prev) => prev.filter((item) => item.name !== name));
@@ -87,13 +92,17 @@ export const App: React.FC = () => {
           setOriginalData={setOriginalData}
           filteredData={sortedData}
           setLocationFilter={setLocationFilter}
-          setCategoryGroups={setCategoryGroups}
+          setCategoryGroupsFilter={setCategoryGroupsFilter}
+          setNumEmployeesFilter={setNumEmployeesFilter}
+          setRevenueRangeFilter={setRevenueRangeFilter}
           updateFilters={updateFilters}
         />
         <FilterInput
           updateFilters={updateFilters}
           locationFilter={locationFilter}
-          categoryGroups={categoryGroups}
+          categoryGroupsFilter={categoryGroupsFilter}
+          numEmployeesFilter={numEmployeesFilter}
+          revenueRangeFilter={revenueRangeFilter}
         />
         <JsonTable
           tableData={sortedData}

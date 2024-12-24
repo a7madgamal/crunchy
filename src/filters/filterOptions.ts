@@ -69,6 +69,7 @@ export const REV_OPTIONS = [
 export const IS_CHECKED_OPTIONS = ["true", "false"];
 
 export const NUM_EMPLOYEES = [
+  "—",
   "1-10",
   "11-50",
   "51-100",

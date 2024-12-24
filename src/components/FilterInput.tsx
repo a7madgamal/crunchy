@@ -9,11 +9,7 @@ import {
   InputLabel,
   FormControl,
 } from "@mui/material";
-import {
-  NUM_EMPLOYEES,
-  REV_OPTIONS,
-  IS_CHECKED_OPTIONS,
-} from "../filters/filterOptions";
+import { REV_OPTIONS, IS_CHECKED_OPTIONS } from "../filters/filterOptions";
 
 interface FilterInputProps {
   updateFilters: (
@@ -26,13 +22,17 @@ interface FilterInputProps {
     isCheckedFilter: string[]
   ) => void;
   locationFilter: string[];
-  categoryGroups: string[];
+  categoryGroupsFilter: string[];
+  numEmployeesFilter: string[];
+  revenueRangeFilter: string[];
 }
 
 export const FilterInput: FC<FilterInputProps> = ({
   updateFilters,
   locationFilter,
-  categoryGroups,
+  categoryGroupsFilter,
+  numEmployeesFilter,
+  revenueRangeFilter,
 }) => {
   const { control, watch } = useForm<{
     name: string;
@@ -107,7 +107,7 @@ export const FilterInput: FC<FilterInputProps> = ({
               multiple
               renderValue={(selected) => selected.join(", ")}
             >
-              {NUM_EMPLOYEES.map((option) => (
+              {numEmployeesFilter.map((option) => (
                 <MenuItem key={option} value={option}>
                   <Checkbox checked={field.value.includes(option)} />
                   <ListItemText primary={option} />
@@ -129,7 +129,7 @@ export const FilterInput: FC<FilterInputProps> = ({
               multiple
               renderValue={(selected) => selected.join(", ")}
             >
-              {categoryGroups.map((option) => (
+              {categoryGroupsFilter.map((option) => (
                 <MenuItem key={option} value={option}>
                   <Checkbox checked={field.value.includes(option)} />
                   <ListItemText primary={option} />
