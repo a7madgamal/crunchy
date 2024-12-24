@@ -9,7 +9,7 @@ import {
   InputLabel,
   FormControl,
 } from "@mui/material";
-import { REV_OPTIONS, IS_CHECKED_OPTIONS } from "../filters/filterOptions";
+import { IS_CHECKED_OPTIONS } from "../filters/filterOptions";
 
 interface FilterInputProps {
   updateFilters: (
@@ -186,7 +186,7 @@ export const FilterInput: FC<FilterInputProps> = ({
               multiple
               renderValue={(selected) => selected.join(", ")}
             >
-              {REV_OPTIONS.map((option) => (
+              {revenueRangeFilter.map((option) => (
                 <MenuItem key={option} value={option}>
                   <Checkbox checked={field.value.indexOf(option) > -1} />
                   <ListItemText primary={option} />

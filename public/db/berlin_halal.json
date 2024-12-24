@@ -55751,6 +55751,8 @@
       }
     ],
     "acquirerIdentifier": [],
-    "fundingTotal": "€2,500,000"
+    "fundingTotal": "€2,500,000",
+    "isFav": false,
+    "isChecked": false
   }
 ]

@@ -62,7 +62,14 @@ const JsonTable: React.FC<JsonTableProps> = ({
               {sort.column === "rankOrgCompany" &&
                 (sort.order === "asc" ? "▲" : "▼")}
             </TableCell>
-            <TableCell>Revenue Range</TableCell>
+            <TableCell
+              onClick={() => handleSort("revenueRange")}
+              style={{ cursor: "pointer" }}
+            >
+              Revenue Range
+              {sort.column === "revenueRange" &&
+                (sort.order === "asc" ? "▲" : "▼")}
+            </TableCell>
             <TableCell>Checked</TableCell>
             <TableCell>fav</TableCell>
           </TableRow>

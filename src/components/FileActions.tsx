@@ -65,6 +65,7 @@ export const FileActions: React.FC<FileActionsProps> = ({
         });
 
         uniqueNumEmployees.add(item.numEmployeesEnum);
+        uniqueRevenuRanges.add(item.revenueRange);
       });
 
       setLocationFilter(Array.from(uniqueLocations).sort());

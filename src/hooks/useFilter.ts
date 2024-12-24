@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback, useEffect } from "react";
 import {
   DataItem,
   NUM_EMPLOYEES,
+  REV_OPTIONS,
   SortableColumn,
 } from "../filters/filterOptions";
 
@@ -79,6 +80,9 @@ export const useFilter = () => {
           revenueRangeFilter.length === 0 ||
           revenueRangeFilter.some((rev) => item.revenueRange.includes(rev));
 
+        if (typeof item.isChecked !== "boolean") {
+          console.error(`isChecked is not a boolean for`, item);
+        }
         const isCheckedMatches =
           isCheckedFilter.length === 0 ||
           isCheckedFilter.includes(item.isChecked.toString());
@@ -101,8 +105,9 @@ export const useFilter = () => {
 
   const sortedData = useMemo(() => {
     let sorted = [...filteredData];
+    const sortColumn = activeSort.column;
 
-    if (activeSort.column === "numEmployeesEnum") {
+    if (sortColumn === "numEmployeesEnum") {
       sorted.sort((a, b) => {
         const aIndex = NUM_EMPLOYEES.indexOf(a.numEmployeesEnum);
         const bIndex = NUM_EMPLOYEES.indexOf(b.numEmployeesEnum);
@@ -119,10 +124,31 @@ export const useFilter = () => {
 
         return activeSort.order === "asc" ? aIndex - bIndex : bIndex - aIndex;
       });
+    } else if (sortColumn === "revenueRange") {
+      sorted.sort((a, b) => {
+        const aIndex = REV_OPTIONS.indexOf(a.revenueRange);
+        const bIndex = REV_OPTIONS.indexOf(b.revenueRange);
+        if (aIndex === -1) {
+          console.error(
+            `unknown revenueRange filter value [${a.revenueRange}]`
+          );
+
+          return 1;
+        }
+        if (bIndex === -1) {
+          console.error(
+            `unknown revenueRange filter value [${b.revenueRange[0]}]`
+          );
+
+          return -1;
+        }
+
+        return activeSort.order === "asc" ? aIndex - bIndex : bIndex - aIndex;
+      });
     } else {
       sorted.sort((a, b) => {
-        const aValue = parseInt(a[activeSort.column] as string);
-        const bValue = parseInt(b[activeSort.column] as string);
+        const aValue = parseInt(a[sortColumn] as any);
+        const bValue = parseInt(b[sortColumn] as any);
 
         if (aValue < bValue) return activeSort.order === "asc" ? -1 : 1;
         if (aValue > bValue) return activeSort.order === "asc" ? 1 : -1;

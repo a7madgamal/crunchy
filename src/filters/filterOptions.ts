@@ -51,21 +51,23 @@ export interface DataItem {
   categories: string[];
   locationIdentifiers: string[];
   rankOrgCompany: number;
-  revenueRange: string[];
+  revenueRange: string;
   isChecked: boolean;
   isFav: boolean;
 }
 
 export const REV_OPTIONS = [
-  "$10B+",
-  "$1B to $10B",
-  "$500M to $1B",
-  "$100M to $500M",
-  "$50M to $100M",
-  "$10M to $50M",
-  "$1M to $10M",
+  "—",
   "Less than $1M",
+  "$1M to $10M",
+  "$10M to $50M",
+  "$50M to $100M",
+  "$100M to $500M",
+  "$500M to $1B",
+  "$1B to $10B",
+  "$10B+",
 ];
+
 export const IS_CHECKED_OPTIONS = ["true", "false"];
 
 export const NUM_EMPLOYEES = [
@@ -82,56 +84,7 @@ export const NUM_EMPLOYEES = [
   "10001+",
 ];
 
-export const CATEGORY_GROUPS_FILTER = [
-  "Consumer Electronics",
-  "Energy",
-  "Hardware",
-  "Natural Resources",
-  "Science and Engineering",
-  "Manufacturing",
-  "Software",
-  "Administrative Services",
-  "Sustainability",
-  "Food and Beverage",
-  "Real Estate",
-  "Health Care",
-  "Media and Entertainment",
-  "Mobile",
-  "Other",
-  "Financial Services",
-  "Commerce and Shopping",
-  "Government and Military",
-  "Lending and Investments",
-  "Transportation",
-  "Professional Services",
-  "Information Technology",
-  "Travel and Tourism",
-  "Sales and Marketing",
-  "Internet Services",
-  "Messaging and Telecommunications",
-  "Privacy and Security",
-  "Community and Lifestyle",
-  "Social Impact",
-  "Payments",
-  "Consumer Goods",
-  "Data and Analytics",
-  "Artificial Intelligence (AI)",
-  "Clothing and Apparel",
-  "Design",
-  "Agriculture and Farming",
-  "Education",
-  "Music and Audio",
-  "Video",
-  "Content and Publishing",
-  "Gaming",
-  "Sports",
-  "Advertising",
-  "Biotechnology",
-  "Navigation and Mapping",
-  "Apps",
-  "Events",
-  "Blockchain and Cryptocurrency",
-  "Platforms",
-];
-
-export type SortableColumn = "rankOrgCompany" | "numEmployeesEnum";
+export type SortableColumn =
+  | "rankOrgCompany"
+  | "numEmployeesEnum"
+  | "revenueRange";
