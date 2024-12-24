@@ -74,6 +74,7 @@ export const FilterInput: FC<FilterInputProps> = ({
       watchRevenueRange,
       watchIsChecked
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     watchName,
     watchNumEmployees,

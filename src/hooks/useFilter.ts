@@ -144,6 +144,7 @@ export const useFilter = () => {
       currentFilters.revenueRangeFilter,
       currentFilters.isCheckedFilter
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     currentFilters.categoriesFilter,
     currentFilters.locationFilter,
