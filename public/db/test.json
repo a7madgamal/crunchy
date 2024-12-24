@@ -1,0 +1,654 @@
+[
+  {
+    "name": "cwallet",
+    "companyCBUrl": "https://www.crunchbase.com/organization/cwallet",
+    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/vpf6elz0ll2whgejbjch",
+    "shortDescription": "PAYROLL.PAYMENT.REMITTANCE",
+    "description": "C Wallet Services is a a Fintech startup that provides payroll, payment and remittance services. Allowing users to receive their salary on time, providing access to e-commerce platforms including our own marketplace so users can buy and pay online even without having a bank. Daily needs like groceries and medicines can be delivered to their family’s doorstep if requested and ultimately, send money home anytime and anywhere. It provides financial services for the unbanked and low-income migrant workers, domestic helpers and blue collar workers. Catering mSME, Startups and home-made-business. Fast, secure, and hassle-free payments, payroll, cross border remittance mobile application.",
+    "numEmployeesEnum": "1-10",
+    "categories": [
+      "Blockchain",
+      "Cryptocurrency",
+      "Financial Services",
+      "FinTech",
+      "Mobile Payments",
+      "Payments"
+    ],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "52573",
+    "linkedin": "https://www.linkedin.com/company/cwallet-qatar/",
+    "website": "https://cwallet.qa/",
+    "revenueRange": "$1M to $10M",
+    "foundedOn": "Jun 26, 2019",
+    "companyType": "For Profit",
+    "contactEmail": "support@cwallet.qa",
+    "phoneNumber": "97444591663",
+    "categoryGroups": [
+      "Blockchain and Cryptocurrency",
+      "Financial Services",
+      "Mobile",
+      "Other",
+      "Payments",
+      "Software"
+    ],
+    "founderIdentifiers": [
+      {
+        "name": "Abdul AlYafei",
+        "link": "https://www.crunchbase.com/person/abdul-alyafei"
+      },
+      {
+        "name": "Michael Javier",
+        "link": "https://www.crunchbase.com/person/michael-javier-3cc6"
+      }
+    ],
+    "investorIdentifiers": [
+      {
+        "name": "Village Capital",
+        "link": "https://www.crunchbase.com/organization/village-capital"
+      },
+      {
+        "name": "Tenity",
+        "link": "https://www.crunchbase.com/organization/tenity"
+      },
+      {
+        "name": "MBK Holding",
+        "link": "https://www.crunchbase.com/organization/mbk-holding"
+      },
+      {
+        "name": "Angel.qa",
+        "link": "https://www.crunchbase.com/organization/angel-qa"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "$1,595,000"
+  },
+  {
+    "name": "Dibsy",
+    "companyCBUrl": "https://www.crunchbase.com/organization/dibsy",
+    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/u7vbh1pirsf924zfvj9a",
+    "shortDescription": "Here to make processing payments simple.",
+    "description": "Our goal is to change the face of payments, banking, and to make payment processing stupid... sorry we meant simple. So simple in fact that you’ll never waste your precious time yelling at customer support ever again. You can instead spend that time flexing on your competitors, customers, parents, friends, dog...and with how good our technology is, maybe even the aliens.",
+    "numEmployeesEnum": "1-10",
+    "categories": [
+      "Cloud Infrastructure",
+      "Financial Services",
+      "FinTech",
+      "Internet",
+      "Payments"
+    ],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "89275",
+    "linkedin": "https://www.linkedin.com/company/dibsyhq",
+    "website": "https://dibsy.one/",
+    "revenueRange": "Less than $1M",
+    "foundedOn": "Feb 20, 2020",
+    "companyType": "For Profit",
+    "contactEmail": "team@dibsy.one",
+    "phoneNumber": "",
+    "categoryGroups": [
+      "Financial Services",
+      "Hardware",
+      "Internet Services",
+      "Payments"
+    ],
+    "founderIdentifiers": [
+      {
+        "name": "Ahmed Isse",
+        "link": "https://www.crunchbase.com/person/ahmed-isse"
+      },
+      {
+        "name": "Anouar Elmekki Azoulay",
+        "link": "https://www.crunchbase.com/person/anouar-el-mekki"
+      },
+      {
+        "name": "Loyan Farah",
+        "link": "https://www.crunchbase.com/person/loyan-farah"
+      }
+    ],
+    "investorIdentifiers": [
+      {
+        "name": "Mohamed Issa Haji Ahmed",
+        "link": "https://www.crunchbase.com/person/mohamed-issa-haji-ahmed"
+      },
+      {
+        "name": "Khalid Sultan Al-Darwish",
+        "link": "https://www.crunchbase.com/person/khalid-sultan-al-darwish"
+      },
+      {
+        "name": "Abdullah Majed Al Nuaimi",
+        "link": "https://www.crunchbase.com/person/abdullah-majed-al-nuaimi"
+      },
+      {
+        "name": "Salem Khalaf Al Mannai",
+        "link": "https://www.crunchbase.com/person/salem-khalaf-al-mannai"
+      },
+      {
+        "name": "Nabeale El-Mansub",
+        "link": "https://www.crunchbase.com/person/nabeale-el-mansub"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "$300,000"
+  },
+  {
+    "name": "Spendwisor Inc",
+    "companyCBUrl": "https://www.crunchbase.com/organization/spendwisor-inc",
+    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/nzswtumoevgs84dakcjk",
+    "shortDescription": "Spendwisor is a mobile payment and Mobile POS App, with integrated loyalty program solution",
+    "description": "Spendwisor a Fintech startup, is a fast-growing mobile payment startup that redefines the retail ecosystem through innovative business-to-customer marketing. Our solution is a retail industry-led mobile wallet and mobile POS (mPOS) with an integrated loyalty program. It transforms the retail ecosystem by providing an innovative digital platform that accepts mobile payments and rewards shoppers with points and cashback",
+    "numEmployeesEnum": "1-10",
+    "categories": ["Financial Services", "FinTech"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "101192",
+    "linkedin": "https://www.linkedin.com/company/spendwisor/",
+    "website": "https://spendwisor.app/",
+    "revenueRange": "$1M to $10M",
+    "foundedOn": "Jul 1, 2020",
+    "companyType": "For Profit",
+    "contactEmail": "Farook@spendwisor.app",
+    "phoneNumber": "",
+    "categoryGroups": ["Financial Services"],
+    "founderIdentifiers": [
+      {
+        "name": "Khalid Al-Kaabi",
+        "link": "https://www.crunchbase.com/person/khalid-al-kaabi"
+      },
+      {
+        "name": "Safarudheen farook",
+        "link": "https://www.crunchbase.com/person/safarudheen-farook"
+      }
+    ],
+    "investorIdentifiers": [
+      {
+        "name": "GSD Venture Studios",
+        "link": "https://www.crunchbase.com/organization/gsd-venture-studios"
+      },
+      {
+        "name": "The Global Emerging Markets Group",
+        "link": "https://www.crunchbase.com/organization/the-global-emerging-markets-group"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "QAR310,000,000"
+  },
+  {
+    "name": "Classtap",
+    "companyCBUrl": "https://www.crunchbase.com/organization/classtap",
+    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/rcva6olt7pfollroazqv",
+    "shortDescription": "Classtap platform that provides access to multiple gyms and studios through one membership, providing variety and flexibility of workouts.",
+    "description": "Classtap is a lifestyle company that provides access to multiple gyms and studios with one membership and through one app. It connects members to a variety of fitness experiences including yoga, boxing, Pilates, HIIT, Spinning and more. Classtap motivates customers to lead healthy lifestyles by inspiring, introducing and connecting them to new fitness experiences. It facilitates this by partnering with gyms, studios, hotels and wellness providers and through its platform members can discover and book fitness classes and day passes to gyms. Classtap helps its partners reach new customer segments and increase their revenue by marketing and filling up their excess inventory. The company was founded in 2020 and headquartered in Doha, Qatar.",
+    "numEmployeesEnum": "1-10",
+    "categories": [
+      "Consumer Applications",
+      "Fitness",
+      "Health Care",
+      "Information Services",
+      "Software",
+      "Subscription Service",
+      "Wellness"
+    ],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "118956",
+    "linkedin": "https://www.linkedin.com/company/classtap",
+    "website": "https://www.classtap.com/",
+    "revenueRange": "",
+    "foundedOn": "Jan 15, 2020",
+    "companyType": "For Profit",
+    "contactEmail": "hello@classtap.com",
+    "phoneNumber": "+97433140767",
+    "categoryGroups": [
+      "Apps",
+      "Health Care",
+      "Information Technology",
+      "Other",
+      "Software",
+      "Sports"
+    ],
+    "founderIdentifiers": [
+      {
+        "name": "Bashar Hudhud",
+        "link": "https://www.crunchbase.com/person/bashar-hudhud"
+      }
+    ],
+    "investorIdentifiers": [
+      {
+        "name": "Qatar Sportstech",
+        "link": "https://www.crunchbase.com/organization/qatar-sportstech"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "$150,000"
+  },
+  {
+    "name": "My Pet World",
+    "companyCBUrl": "https://www.crunchbase.com/organization/my-pet-world",
+    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/hux0ympwm3kkifds1bax",
+    "shortDescription": "First of its kind one-stop app for pet owners",
+    "description": "My Pet World is a one-stop app for pet lovers which caters to three core features such as shopping for pet food & accessories, booking pet services, socialising with the pet owner community & manage pet profiles.",
+    "numEmployeesEnum": "1-10",
+    "categories": [
+      "Communities",
+      "Environmental Consulting",
+      "Lifestyle",
+      "Pet",
+      "Social Entrepreneurship",
+      "Social Impact",
+      "Social Network",
+      "Sustainability"
+    ],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "125124",
+    "linkedin": "https://www.linkedin.com/company/79028377",
+    "website": "https://www.mypetworld.app/",
+    "revenueRange": "",
+    "foundedOn": "Jul 6, 2022",
+    "companyType": "For Profit",
+    "contactEmail": "info@mypetworld.app",
+    "phoneNumber": "97430902714",
+    "categoryGroups": [
+      "Community and Lifestyle",
+      "Internet Services",
+      "Other",
+      "Professional Services",
+      "Social Impact",
+      "Sustainability"
+    ],
+    "founderIdentifiers": [
+      {
+        "name": "Joseph Jeffin",
+        "link": "https://www.crunchbase.com/person/joseph-jeffin"
+      }
+    ],
+    "investorIdentifiers": [
+      {
+        "name": "Qatar Development Bank",
+        "link": "https://www.crunchbase.com/organization/qatar-development-bank"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "QAR190,000"
+  },
+  {
+    "name": "Narwi",
+    "companyCBUrl": "https://www.crunchbase.com/organization/narwi",
+    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/v1407846846/tybaljcblzxs3ujado5x.jpg",
+    "shortDescription": "Narwi is the world’s first online micro-giving platform created for Arabs by Arabs.",
+    "description": "Narwi is the world’s first online micro-giving platform created for Arabs by Arabs. Narwi is Arabic for “to tell a story,” as well as “to nourish.” We tell the stories of ambitious young men and women from throughout the region with different backgrounds, aspirations, and needs. Our mission is to connect these young Arab micro-entrepreneurs with capital and knowledge, mobilized through the crowd, which enables them to grow sustainable businesses and create jobs for others. Young entrepreneurs in the Arab region face huge challenges in getting financing and support for their businesses. Narwi works to connect young entrepreneurs with local banks, microfinance institutions and other organizations on the ground, who can provide the support they need to help take their startup projects to the next level. Narwi provides an easy-to use, transparent and reliable Web platform that allows potential donors throughout the world to choose which young Arab entrepreneurs they want to fund.",
+    "numEmployeesEnum": "1-10",
+    "categories": ["Internet", "Non Profit"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "138626",
+    "linkedin": "",
+    "website": "http://www.narwi.org/",
+    "revenueRange": "$1M to $10M",
+    "foundedOn": "Mar 1, 2012",
+    "companyType": "",
+    "contactEmail": "",
+    "phoneNumber": "",
+    "categoryGroups": ["Internet Services", "Other", "Social Impact"],
+    "founderIdentifiers": [
+      {
+        "name": "Mohammad Raafi Hossain",
+        "link": "https://www.crunchbase.com/person/mohammad-raafi-hossain"
+      }
+    ],
+    "investorIdentifiers": [],
+    "acquirerIdentifier": [],
+    "fundingTotal": "$8,700,000"
+  },
+  {
+    "name": "AgriCope",
+    "companyCBUrl": "https://www.crunchbase.com/organization/agricope",
+    "image": "https://images.crunchbase.com/image/upload/c_pad,h_25,w_25,f_auto,b_white,q_auto:eco,dpr_1/txmf2huvpvzufxoqwbz9",
+    "shortDescription": "AgriCope is an agri-online marketplace that aims to revolutionize the way food businesses source fresh and quality produce.",
+    "description": "AgriCope is an agri-online marketplace that aims to revolutionize the way food businesses source fresh and quality produce.",
+    "numEmployeesEnum": "1-10",
+    "categories": ["AgTech", "Farmers Market"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "160197",
+    "linkedin": "https://www.linkedin.com/company/agricope",
+    "website": "https://agricope.com/",
+    "revenueRange": "",
+    "foundedOn": "2023",
+    "companyType": "For Profit",
+    "contactEmail": "",
+    "phoneNumber": "",
+    "categoryGroups": ["Agriculture and Farming", "Food and Beverage"],
+    "founderIdentifiers": [],
+    "investorIdentifiers": [
+      {
+        "name": "Digital Incubation Center",
+        "link": "https://www.crunchbase.com/organization/digital-incubation-center"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "QAR50,000"
+  },
+  {
+    "name": "Eyenk.com",
+    "companyCBUrl": "https://www.crunchbase.com/organization/eyenk-com",
+    "image": "",
+    "shortDescription": "Qatar's Larget Online Contact Lens Store",
+    "description": "As Qatar's first largest online contact lenses supplier, we help thousands of happy customers to save on the cost of their eye care every month.",
+    "numEmployeesEnum": "1-10",
+    "categories": ["Beauty", "E-Commerce", "Medical"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "166336",
+    "linkedin": "https://www.linkedin.com/company/eyenk/",
+    "website": "https://eyenk.com/",
+    "revenueRange": "",
+    "foundedOn": "Jun 1, 2020",
+    "companyType": "For Profit",
+    "contactEmail": "support@eyenk.com",
+    "phoneNumber": "+97466921362",
+    "categoryGroups": [
+      "Commerce and Shopping",
+      "Consumer Goods",
+      "Health Care"
+    ],
+    "founderIdentifiers": [
+      {
+        "name": "Shabeel Kandi",
+        "link": "https://www.crunchbase.com/person/shabeel-kandi"
+      }
+    ],
+    "investorIdentifiers": [],
+    "acquirerIdentifier": [],
+    "fundingTotal": "$120,000"
+  },
+  {
+    "name": "Be My Sense",
+    "companyCBUrl": "https://www.crunchbase.com/organization/be-my-sense",
+    "image": "",
+    "shortDescription": "AI and IoT powered app that bridges the communication gap for the Deaf and hearing-impaired community.",
+    "description": "",
+    "numEmployeesEnum": "1-10",
+    "categories": ["Assistive Technology"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "176121",
+    "linkedin": "https://www.linkedin.com/company/bemysenses",
+    "website": "https://www.bemysense.com/",
+    "revenueRange": "",
+    "foundedOn": "Mar 2024",
+    "companyType": "For Profit",
+    "contactEmail": "contact@bemysense.com",
+    "phoneNumber": "",
+    "categoryGroups": ["Health Care"],
+    "founderIdentifiers": [],
+    "investorIdentifiers": [],
+    "acquirerIdentifier": [],
+    "fundingTotal": "$13,000"
+  },
+  {
+    "name": "eArabic.io",
+    "companyCBUrl": "https://www.crunchbase.com/organization/earabic-io",
+    "image": "",
+    "shortDescription": "An online learning platform that offers 1-to-1 Arabic lessons for students between 6 and 16 years.",
+    "description": "eArabic is an online platform that offers 1-to-1 Arabic lessons for students between 6 and 16 years. We partner with teachers, support them in producing appealing content on the web so that potential students can find & book classes with them through our platform.",
+    "numEmployeesEnum": "1-10",
+    "categories": ["EdTech"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "176985",
+    "linkedin": "",
+    "website": "https://www.earabic.io/",
+    "revenueRange": "",
+    "foundedOn": "Sep 15, 2020",
+    "companyType": "For Profit",
+    "contactEmail": "ibrahim@earabic.io",
+    "phoneNumber": "+97433693711",
+    "categoryGroups": ["Education", "Software"],
+    "founderIdentifiers": [],
+    "investorIdentifiers": [
+      {
+        "name": "Ooredoo Group",
+        "link": "https://www.crunchbase.com/organization/ooredoo"
+      },
+      {
+        "name": "Qatar Development Bank",
+        "link": "https://www.crunchbase.com/organization/qatar-development-bank"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "$52,000"
+  },
+  {
+    "name": "eHaris",
+    "companyCBUrl": "https://www.crunchbase.com/organization/eharis",
+    "image": "",
+    "shortDescription": "Digital ID with Intelligent Visitor Solution for Events, Gated communities & Office buildings including visitors, employees & support staff.",
+    "description": "Digital ID for the physical world. Intelligent Visitor Solution for Events, Gated communities & Office buildings including visitors, employees & support staff.",
+    "numEmployeesEnum": "1-10",
+    "categories": [
+      "Events",
+      "Identity Management",
+      "Information Technology",
+      "Internet",
+      "SaaS",
+      "Software",
+      "Ticketing"
+    ],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "179770",
+    "linkedin": "https://linkedin.com/company/eharis",
+    "website": "https://eharis.com/",
+    "revenueRange": "",
+    "foundedOn": "2021",
+    "companyType": "For Profit",
+    "contactEmail": "contact@eharis.com",
+    "phoneNumber": "",
+    "categoryGroups": [
+      "Events",
+      "Information Technology",
+      "Internet Services",
+      "Media and Entertainment",
+      "Privacy and Security",
+      "Software"
+    ],
+    "founderIdentifiers": [
+      {
+        "name": "Binod Chandran",
+        "link": "https://www.crunchbase.com/person/binod-chandran"
+      },
+      {
+        "name": "Dijin Kumar",
+        "link": "https://www.crunchbase.com/person/dijin-kumar"
+      },
+      {
+        "name": "Fijo George",
+        "link": "https://www.crunchbase.com/person/fijo-george-6356"
+      }
+    ],
+    "investorIdentifiers": [
+      {
+        "name": "Qatar Development Bank",
+        "link": "https://www.crunchbase.com/organization/qatar-development-bank"
+      },
+      {
+        "name": "Ooredoo Group",
+        "link": "https://www.crunchbase.com/organization/ooredoo"
+      },
+      {
+        "name": "Qatar Business Incubation Center",
+        "link": "https://www.crunchbase.com/organization/qatar-business-incubation-center"
+      },
+      {
+        "name": "Digital Incubation Center",
+        "link": "https://www.crunchbase.com/organization/digital-incubation-center"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "QAR215,000"
+  },
+  {
+    "name": "Tarbawi",
+    "companyCBUrl": "https://www.crunchbase.com/organization/tarbawi",
+    "image": "",
+    "shortDescription": "Tarbawi is an innovative learning platform that aims to revolutionize education through the use of AI in personalized learning.",
+    "description": "Tarbawi is an innovative learning platform that aims to revolutionize education through the use of AI in personalized learning.",
+    "numEmployeesEnum": "1-10",
+    "categories": ["Artificial Intelligence (AI)", "E-Learning", "Education"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "181333",
+    "linkedin": "https://www.linkedin.com/company/tarbawi",
+    "website": "https://www.tarbawi.net/",
+    "revenueRange": "",
+    "foundedOn": "2023",
+    "companyType": "For Profit",
+    "contactEmail": "info@tarbawi.net",
+    "phoneNumber": "+97455525749",
+    "categoryGroups": [
+      "Artificial Intelligence (AI)",
+      "Data and Analytics",
+      "Education",
+      "Science and Engineering",
+      "Software"
+    ],
+    "founderIdentifiers": [
+      {
+        "name": "Ibrahim Alzu'bi",
+        "link": "https://www.crunchbase.com/person/ibrahim-alzu-bi-de3c"
+      },
+      {
+        "name": "Mutasem Alnajjar",
+        "link": "https://www.crunchbase.com/person/mutasem-alnajjar"
+      }
+    ],
+    "investorIdentifiers": [
+      {
+        "name": "Digital Incubation Center",
+        "link": "https://www.crunchbase.com/organization/digital-incubation-center"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "QAR150,000"
+  },
+  {
+    "name": "hapondo",
+    "companyCBUrl": "https://www.crunchbase.com/organization/hapondo",
+    "image": "",
+    "shortDescription": "hapondo is a real estate marketing platform offering detailed search options for properties in Qatar.",
+    "description": "hapondo operates as a real estate marketing platform. It offers a comprehensive map and photo search for apartments, villas, and commercial properties available for rent or sale in Qatar. The platform is designed to make the process of finding and renting properties easier and more efficient. It provides detailed information about each property, including location, price, and amenities. The platform also allows users to post their properties for rent or sale, expanding the options available to potential renters or buyers.",
+    "numEmployeesEnum": "1-10",
+    "categories": ["Property Management", "Real Estate", "Rental Property"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "181462",
+    "linkedin": "https://www.linkedin.com/company/hapondo",
+    "website": "https://hapondo.qa/",
+    "revenueRange": "$1M to $10M",
+    "foundedOn": "2019",
+    "companyType": "For Profit",
+    "contactEmail": "info@hapondo.qa",
+    "phoneNumber": "",
+    "categoryGroups": ["Real Estate"],
+    "founderIdentifiers": [],
+    "investorIdentifiers": [],
+    "acquirerIdentifier": [
+      {
+        "name": "Sakan",
+        "link": "https://www.crunchbase.com/organization/sakan"
+      }
+    ],
+    "fundingTotal": ""
+  },
+  {
+    "name": "Mayhoola",
+    "companyCBUrl": "https://www.crunchbase.com/organization/mayhoola",
+    "image": "",
+    "shortDescription": "Mayhoola is a Qatari Company focus on local and global investments.",
+    "description": "Mayhoola is an investment vehicle supported by Sheikha Mozah, the second wife of the former emir, which already owns Valentino and holds controlling stakes in Italian tailor Pal Zileri and British fashion brand Anya Hindmarch.",
+    "numEmployeesEnum": "1-10",
+    "categories": ["Financial Services"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "182341",
+    "linkedin": "",
+    "website": "http://www.mayhoola.com/",
+    "revenueRange": "",
+    "foundedOn": "2011",
+    "companyType": "For Profit",
+    "contactEmail": "info@mayhoola.com",
+    "phoneNumber": "+97440322222",
+    "categoryGroups": ["Financial Services"],
+    "founderIdentifiers": [],
+    "investorIdentifiers": [],
+    "acquirerIdentifier": [],
+    "fundingTotal": ""
+  },
+  {
+    "name": "Vastry LLC",
+    "companyCBUrl": "https://www.crunchbase.com/organization/vastry-llc",
+    "shortDescription": "Software Development , Marketing and professional services",
+    "description": "",
+    "numEmployeesEnum": "1-10",
+    "categories": ["E-Commerce", "Electronics", "Hardware", "Marketing"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "212025",
+    "linkedin": "https://www.linkedin.com/company/vastry",
+    "website": "https://vastry.com/",
+    "revenueRange": "",
+    "foundedOn": "Mar 2, 2021",
+    "companyType": "For Profit",
+    "contactEmail": "Hello@vastry.com",
+    "phoneNumber": "",
+    "categoryGroups": [
+      "Commerce and Shopping",
+      "Consumer Electronics",
+      "Hardware",
+      "Sales and Marketing"
+    ],
+    "founderIdentifiers": [
+      {
+        "name": "Ehab Nagip",
+        "link": "https://www.crunchbase.com/person/ehab-nagip"
+      }
+    ],
+    "investorIdentifiers": [
+      {
+        "name": "Qatar Business Incubation Center",
+        "link": "https://www.crunchbase.com/organization/qatar-business-incubation-center"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "$30,000"
+  },
+  {
+    "name": "Goobynet",
+    "companyCBUrl": "https://www.crunchbase.com/organization/gooby",
+    "image": "",
+    "shortDescription": "Online Marketplace that connects Freelancers to clients from all over the world. Gooby sell both On-site & Online Services",
+    "description": "GOOBY is a two-pronged platform aimed at elevating freelancers by providing work opportunities and assisting project completion by connecting skilled freelancers to projects in need. Freelancers get the opportunity to cash in from their hard work with minimal fees, and businesses and individuals can easily find skilled freelancers. This site not only provides a platform for digital work, but it also accommodates for on-site work, such as event photography, event management, physical tutoring, etc. Through this platform, freelancers have the ability to manage their work within a calendar while buyers can book appointments with freelancers when needed. The platform has an integrated chat function that allows for voice notes, visual material sharing, and lag-free text chatting, ensuring fluid communication between clients and freelancers. Gooby has acquired different channels: a website and two mobile applications, one for clients and another for freelancers. Both mobile applications are available in the Apple App Store and Google Play Store.",
+    "numEmployeesEnum": "1-10",
+    "categories": ["Freelance", "Marketplace"],
+    "locationIdentifiers": ["Doha", "Qatar"],
+    "rankOrgCompany": "220879",
+    "linkedin": "https://www.linkedin.com/company/gooby",
+    "website": "https://gooby.net/",
+    "revenueRange": "",
+    "foundedOn": "Oct 1, 2019",
+    "companyType": "For Profit",
+    "contactEmail": "info@gooby.net",
+    "phoneNumber": "",
+    "categoryGroups": ["Commerce and Shopping", "Professional Services"],
+    "founderIdentifiers": [
+      {
+        "name": "Noora Almarri",
+        "link": "https://www.crunchbase.com/person/noora-almarri"
+      },
+      {
+        "name": "Raghad Akram",
+        "link": "https://www.crunchbase.com/person/raghad-akram"
+      },
+      {
+        "name": "Taimaa Mohamed",
+        "link": "https://www.crunchbase.com/person/taimaa-mohamed"
+      }
+    ],
+    "investorIdentifiers": [
+      {
+        "name": "Qatar Science & Technology Park",
+        "link": "https://www.crunchbase.com/organization/qatar-science-technology-park"
+      }
+    ],
+    "acquirerIdentifier": [],
+    "fundingTotal": "$400,000"
+  }
+]
